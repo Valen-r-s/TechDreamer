@@ -1,0 +1,37 @@
+Begin Object Class=/Script/Engine.Material Name="M_Window_Glass"
+   Begin Object Class=/Script/Engine.MaterialExpressionConstant Name="MaterialExpressionConstant_1"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionVectorParameter Name="MaterialExpressionVectorParameter_0"
+   End Object
+   Begin Object Class=/Script/UnrealEd.SceneThumbnailInfoWithPrimitive Name="SceneThumbnailInfoWithPrimitive_0"
+   End Object
+   Begin Object Name="MaterialExpressionConstant_1"
+      R=10.000000
+      MaterialExpressionEditorX=73
+      MaterialExpressionEditorY=264
+      MaterialExpressionGuid=226187A247569CF5B1BBB2B13830ACD3
+      Material=Material'"M_Window_Glass"'
+      bCollapsed=False
+   End Object
+   Begin Object Name="MaterialExpressionVectorParameter_0"
+      DefaultValue=(R=0.500000,G=0.500000,B=0.500000,A=0.000000)
+      ExpressionGUID=D155BFAD467F69A46D0834B3767A4C1B
+      MaterialExpressionGuid=5C64C0044BF415533A8F0F8A1C1B0F90
+      Material=Material'"M_Window_Glass"'
+   End Object
+   Begin Object Name="SceneThumbnailInfoWithPrimitive_0"
+   End Object
+   BaseColor=(Expression=MaterialExpressionVectorParameter'"MaterialExpressionVectorParameter_0"',Mask=1,MaskR=1,MaskG=1,MaskB=1)
+   EmissiveColor=(Expression=MaterialExpressionConstant'"MaterialExpressionConstant_1"')
+   bUsedWithStaticLighting=True
+   EditorX=384
+   EditorY=-80
+   Expressions(0)=MaterialExpressionVectorParameter'"MaterialExpressionVectorParameter_0"'
+   Expressions(1)=MaterialExpressionConstant'"MaterialExpressionConstant_1"'
+   ParameterGroupData(0)=(GroupName="None")
+   bCanMaskedBeAssumedOpaque=True
+   StateId=89B2C6A148A7BB8807805A9424437563
+   CachedExpressionData=(Parameters=(RuntimeEntries[1]=(NameHashes=(10371715421228879687),ParameterInfos=((Name="Param")),ExpressionGuids=(D155BFAD467F69A46D0834B3767A4C1B)),VectorValues=((R=0.500000,G=0.500000,B=0.500000,A=0.000000)),VectorChannelNameValues=(()),VectorUsedAsChannelMaskValues=(False)),QualityLevelsUsed=(False,False,False,False))
+   ThumbnailInfo=SceneThumbnailInfoWithPrimitive'"SceneThumbnailInfoWithPrimitive_0"'
+   LightingGuid=57AD40734D9938A0E98FBABC337C1784
+End Object

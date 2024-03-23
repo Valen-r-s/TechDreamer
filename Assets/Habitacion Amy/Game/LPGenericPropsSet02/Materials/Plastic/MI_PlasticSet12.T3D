@@ -1,0 +1,19 @@
+Begin Object Class=/Script/Engine.MaterialInstanceConstant Name="MI_PlasticSet12"
+   Begin Object Class=/Script/UnrealEd.SceneThumbnailInfoWithPrimitive Name="SceneThumbnailInfoWithPrimitive_0"
+   End Object
+   Begin Object Name="SceneThumbnailInfoWithPrimitive_0"
+   End Object
+   ParameterStateId=AC16C60A43C6FF0B4440E797028A3A56
+   Parent=Material'"/Game/LPGenericPropsSet02/Materials/Generic/M_Generic.M_Generic"'
+   ScalarParameterValues(0)=(ParameterInfo=(Name="RoughnessValue"),ParameterValue=2.000000,ExpressionGUID=DF9F9B40483F055E6227F887C8FBA0BE)
+   ScalarParameterValues(1)=(ParameterInfo=(Name="SpecularValue"),ParameterValue=1.000000,ExpressionGUID=5B3E016C4F03F3D6E7DFB9908F53AAD1)
+   ScalarParameterValues(2)=(ParameterInfo=(Name="RefractionDepthBias"))
+   VectorParameterValues(0)=(ParameterInfo=(Name="DiffuseColor"),ParameterValue=(R=0.942708,G=0.622518,B=0.141320,A=0.000000),ExpressionGUID=6C87436640945B0F3C605BBC6CC68932)
+   BasePropertyOverrides=(DitheredLODTransition=True,OpacityMaskClipValue=0.333300)
+   ReferencedTextureGuids(0)=8B9C7F284F4CB77877667B8036449CFE
+   ReferencedTextureGuids(1)=3C411DE043658BBA428832BC538C216C
+   CachedReferencedTextures(0)=Texture2D'"/Game/LPGenericPropsSet02/Textures/Generic/T_FlatNormal.T_FlatNormal"'
+   CachedReferencedTextures(1)=Texture2D'"/Game/LPGenericPropsSet02/Textures/Generic/T_Gray.T_Gray"'
+   ThumbnailInfo=SceneThumbnailInfoWithPrimitive'"SceneThumbnailInfoWithPrimitive_0"'
+   LightingGuid=02CB0A53449C7C16D376ABA7A1190A78
+End Object

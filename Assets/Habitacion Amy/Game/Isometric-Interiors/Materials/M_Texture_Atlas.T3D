@@ -1,0 +1,54 @@
+Begin Object Class=/Script/Engine.Material Name="M_Texture_Atlas"
+   Begin Object Class=/Script/Engine.MaterialExpressionScalarParameter Name="MaterialExpressionScalarParameter_0"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionScalarParameter Name="MaterialExpressionScalarParameter_1"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionTextureSample Name="MaterialExpressionTextureSample_0"
+   End Object
+   Begin Object Class=/Script/UnrealEd.SceneThumbnailInfoWithPrimitive Name="SceneThumbnailInfoWithPrimitive_0"
+   End Object
+   Begin Object Name="MaterialExpressionScalarParameter_0"
+      DefaultValue=0.250000
+      ParameterName="Metallic"
+      ExpressionGUID=705D8C0548C66E7A59C5EDBAB72126FE
+      MaterialExpressionEditorX=32
+      MaterialExpressionEditorY=144
+      MaterialExpressionGuid=6B0832EE471EDF0BCC92D481BD19AC1D
+      Material=Material'"M_Texture_Atlas"'
+   End Object
+   Begin Object Name="MaterialExpressionScalarParameter_1"
+      DefaultValue=0.900000
+      ParameterName="Roughness"
+      ExpressionGUID=F787E24D4861646D9765F3A7FFB91DD8
+      MaterialExpressionEditorX=115
+      MaterialExpressionEditorY=266
+      MaterialExpressionGuid=9DF144A445069D7CB70C60B002BBCACC
+      Material=Material'"M_Texture_Atlas"'
+   End Object
+   Begin Object Name="MaterialExpressionTextureSample_0"
+      Texture=Texture2D'"/Game/Isometric-Interiors/Textures/Texture_Atlas.Texture_Atlas"'
+      MaterialExpressionEditorX=32
+      MaterialExpressionEditorY=-80
+      MaterialExpressionGuid=BF1E226A49166E6EDC25B4A7E0B6CA98
+      Material=Material'"M_Texture_Atlas"'
+   End Object
+   Begin Object Name="SceneThumbnailInfoWithPrimitive_0"
+   End Object
+   BaseColor=(Expression=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_0"',Mask=1,MaskR=1,MaskG=1,MaskB=1)
+   Metallic=(Expression=MaterialExpressionScalarParameter'"MaterialExpressionScalarParameter_0"')
+   Roughness=(Expression=MaterialExpressionScalarParameter'"MaterialExpressionScalarParameter_1"')
+   bUsedWithStaticLighting=True
+   EditorX=352
+   EditorY=-64
+   Expressions(0)=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_0"'
+   Expressions(1)=MaterialExpressionScalarParameter'"MaterialExpressionScalarParameter_0"'
+   Expressions(2)=MaterialExpressionScalarParameter'"MaterialExpressionScalarParameter_1"'
+   ParameterGroupData(0)=(GroupName="None")
+   bCanMaskedBeAssumedOpaque=True
+   StateId=7030EE7B482AF9AF5D3036AA5230ACEF
+   CachedExpressionData=(Parameters=(RuntimeEntries[0]=(NameHashes=(440574345582452634,3078550227877033723),ParameterInfos=((Name="Roughness"),(Name="Metallic")),ExpressionGuids=(F787E24D4861646D9765F3A7FFB91DD8,705D8C0548C66E7A59C5EDBAB72126FE)),ScalarValues=(0.900000,0.250000),ScalarMinMaxValues=((X=0.000000,Y=0.000000),(X=0.000000,Y=0.000000)),ScalarCurveValues=(None,None),ScalarCurveAtlasValues=(None,None)),ReferencedTextures=(Texture2D'"/Game/Isometric-Interiors/Textures/Texture_Atlas.Texture_Atlas"'),QualityLevelsUsed=(False,False,False,False))
+   ReferencedTextureGuids(0)=E8119FF84EFF52E47D4DD98B47A99F32
+   ThumbnailInfo=SceneThumbnailInfoWithPrimitive'"SceneThumbnailInfoWithPrimitive_0"'
+   ParameterOverviewExpansion=(("-12Global", True))
+   LightingGuid=FA4752424D551244DF3168A5C33FDEFC
+End Object
