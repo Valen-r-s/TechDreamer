@@ -22,6 +22,7 @@ public class GQuizManager : MonoBehaviour
     public GameObject GoPanel;
     public GameObject DialogoPanel;
     public Button nextQ;
+    public Button pause;
 
     private void Start()
     {
@@ -40,6 +41,7 @@ public class GQuizManager : MonoBehaviour
         QuizPanel.SetActive(false);
         DialogoPanel.SetActive(false);
         GoPanel.SetActive(true);
+        pause.gameObject.SetActive(false);
         nextQ.gameObject.SetActive(false);
         ScoreTxt.text = totalScore + "/" + totalQuestions;
     }
