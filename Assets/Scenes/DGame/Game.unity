@@ -1099,8 +1099,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1649164262}
-        m_TargetAssemblyTypeName: DRetry, Assembly-CSharp
+      - m_Target: {fileID: 1685337136}
+        m_TargetAssemblyTypeName: pauseMenu, Assembly-CSharp
         m_MethodName: Cambiaresc
         m_Mode: 3
         m_Arguments:
@@ -2714,8 +2714,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1649164262}
-        m_TargetAssemblyTypeName: DRetry, Assembly-CSharp
+      - m_Target: {fileID: 1685337136}
+        m_TargetAssemblyTypeName: pauseMenu, Assembly-CSharp
         m_MethodName: Cambiaresc
         m_Mode: 3
         m_Arguments:
