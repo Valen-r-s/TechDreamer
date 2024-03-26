@@ -13,8 +13,7 @@ public class verificacion : MonoBehaviour
     public List<DropSlot> slots;
     public string mensajeIntentaDeNuevo = "¡Intenta nuevamente!";
     public dDialogo dialogoScript;
-    public Button botonFelicidades; 
-
+    public Button botonFelicidades;
 
     public void UpdateUserSequence()
     {
@@ -37,6 +36,7 @@ public class verificacion : MonoBehaviour
         UpdateUserSequence(); 
 
         int wrongCount = 0;
+        int correctCount = 0;
 
         for (int i = 0; i < correctSequence.Count; i++)
         {
@@ -44,6 +44,14 @@ public class verificacion : MonoBehaviour
             {
                 wrongCount++;
             }
+            else if (i < userSequence.Count && userSequence[i] == correctSequence[i])
+            {
+                correctCount++;
+            }
+
+            float puntajePorImagenes = correctCount * 10; // Asume que cada respuesta correcta vale 10 puntos
+            PlayerPrefs.SetFloat("PuntajePorImagenes", puntajePorImagenes);
+            PlayerPrefs.Save();
         }
 
         ShowDialog(wrongCount);
@@ -65,6 +73,5 @@ public class verificacion : MonoBehaviour
         dialogPanel.SetActive(true);
         dialogoScript.closeOnEnter = true;
     }
-
 
 }

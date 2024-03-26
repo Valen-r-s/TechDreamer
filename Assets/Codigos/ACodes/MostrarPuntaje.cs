@@ -5,12 +5,13 @@ using TMPro;
 
 public class MostrarPuntaje : MonoBehaviour
 {
-    public TextMeshProUGUI textoPuntaje; // Asigna esto en el Inspector
+    public TextMeshProUGUI textoPuntaje; 
 
     void Start()
     {
-        // Lee el puntaje de PlayerPrefs
-        float puntaje = PlayerPrefs.GetFloat("Puntaje", 0); // Usa 0 como valor por defecto
-        textoPuntaje.text = "" + puntaje.ToString("F2");
+        float puntajeFinal = PlayerPrefs.GetFloat("PuntajePorImagenes", 0) + PlayerPrefs.GetFloat("PuntajePorTiempo", 0); 
+        textoPuntaje.text = "" + puntajeFinal.ToString("F0");
+        PlayerPrefs.SetFloat("Puntaje", 0); 
+        PlayerPrefs.Save();
     }
 }
