@@ -5,7 +5,7 @@ using UnityEngine;
 public class Amy_Mov : MonoBehaviour
 {
 
-    public float RunSpeed = 2.5;
+    public float RunSpeed = 2.5f;
     public float rotationSpeed = 250;
 
     public Animator animator;
@@ -48,23 +48,23 @@ public class Amy_Mov : MonoBehaviour
 
         //animator.SetFloat("VelX", x);
         //animator.SetFloat("VelY", y);  // para cuando lo quiera solo en 2d
-        
+
 
 
         if (Input.GetKey("f"))
         {
-            animator.Play("Dance");
+            animator.Play("Dancing");
         }
-        if (x>0 || x<0 || y>0 || y<0)
+        if (x > 0 || x < 0 || y > 0 || y < 0)
         {
-            animator.SetBool("isDancing",true);
+            animator.SetBool("isDancing", true);
         }
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         if(Input.GetKey("space") && isGrounded)
         {
-            animator.Play("Jump");
-            Invoke("Jump", 1f);
+            animator.Play("Jumping");
+            Invoke("Jumping", 1f);
 
         }
     }
