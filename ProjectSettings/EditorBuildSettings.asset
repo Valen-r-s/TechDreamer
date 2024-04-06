@@ -44,4 +44,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/menuprogra.unity
     guid: 91542eea72d8a4ad18098bcd8bed8594
+  - enabled: 1
+    path: Assets/Scenes/menuInvestigacion.unity
+    guid: ea58a58062da4ab46b46ee8e39068c57
+  - enabled: 1
+    path: Assets/Scenes/IGame/InicioInvest.unity
+    guid: 99c0da691336dcc4b901230b051b0224
   m_configObjects: {}
