@@ -1,47 +1,60 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class ActivadorNotas: MonoBehaviour
+public class ActivadorNotas : MonoBehaviour
 {
-    public GameObject notaVisual; // La representación visual de la nota
-    private NoteManager noteManager;
+    public GameObject notaVisual;
+    public GameObject ObjetoVisual;
+    public GameObject CamaraVisual;
+    public GameObject ObjEnEscena;
 
+    public bool activa;
+
+
+    // Start is called before the first frame update
     void Start()
     {
-        // Encuentra el NoteManager en la escena
-        noteManager = FindObjectOfType<NoteManager>();
+
     }
 
+    // Update is called once per frame
     void Update()
     {
-        // Verifica si el jugador está presionando 'E' y la nota está activa
-        if (Input.GetKeyDown(KeyCode.E) && gameObject.activeInHierarchy)
+        if (Input.GetKeyDown(KeyCode.E) && activa == true)
         {
-            // Posiblemente realizar una acción, como mostrar un detalle de la nota
             notaVisual.SetActive(true);
+            ObjetoVisual.SetActive(true);
+            CamaraVisual.SetActive(true);
+            ObjEnEscena.SetActive(false);
         }
-        // Verifica si el jugador está presionando 'Escape' y la nota está activa
-        else if (Input.GetKeyDown(KeyCode.Escape) && gameObject.activeInHierarchy)
+        if (Input.GetKeyDown(KeyCode.Escape) && activa == true)
         {
             notaVisual.SetActive(false);
+            ObjetoVisual.SetActive(false);
+            CamaraVisual.SetActive(false);
+            ObjEnEscena.SetActive(true);
         }
     }
 
-    // Se llama cuando el jugador colisiona con la nota
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.tag == "Player")
         {
-            // Notifica al NoteManager que active la siguiente nota
-            noteManager.ActivateNextNote();
+            activa = true;          
         }
     }
 
-    // Opcional: Si quieres desactivar la visualización cuando el jugador se aleja
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.tag == "Player")
         {
+            activa = false;
             notaVisual.SetActive(false);
+            ObjetoVisual.SetActive(false);
+            CamaraVisual.SetActive(false);
+            ObjEnEscena.SetActive(true);
         }
     }
+
 }
