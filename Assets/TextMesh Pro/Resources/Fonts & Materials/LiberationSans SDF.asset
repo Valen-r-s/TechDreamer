@@ -54,8 +54,8 @@ Material:
     - _TextureHeight: 1024
     - _TextureWidth: 1024
     - _UnderlayDilate: 0
-    - _UnderlayOffsetX: 1
-    - _UnderlayOffsetY: -0.6
+    - _UnderlayOffsetX: 0.56
+    - _UnderlayOffsetY: -0.49
     - _UnderlaySoftness: 0
     - _VertexOffsetX: 0
     - _VertexOffsetY: 0
@@ -63,9 +63,9 @@ Material:
     - _WeightNormal: 0
     m_Colors:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
-    - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
-    - _OutlineColor: {r: 0.4433962, g: 0.0983001, b: 0.22306478, a: 1}
-    - _UnderlayColor: {r: 0.7735849, g: 0.11311854, b: 0.60631543, a: 0.5}
+    - _FaceColor: {r: 0.17025268, g: 0.09967959, b: 0.6037736, a: 1}
+    - _OutlineColor: {r: 0.28194106, g: 0.22414559, b: 0.6509434, a: 1}
+    - _UnderlayColor: {r: 0.6454797, g: 0.61387503, b: 0.8396226, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &11400000
 MonoBehaviour:

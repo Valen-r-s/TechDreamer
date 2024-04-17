@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class verificacion : MonoBehaviour
 {
-    public List<GameObject> correctSequence; 
-    public List<GameObject> userSequence; 
-    public GameObject dialogPanel; 
-    public TextMeshProUGUI dialogText; 
+    public List<GameObject> correctSequence;
+    public List<GameObject> userSequence;
+    public GameObject dialogPanel;
+    public TextMeshProUGUI dialogText;
     public List<DropSlot> slots;
     public string mensajeIntentaDeNuevo = "¡Intenta nuevamente!";
     public dDialogo dialogoScript;
@@ -20,33 +20,31 @@ public class verificacion : MonoBehaviour
         userSequence.Clear();
         foreach (var slot in slots)
         {
-            if (slot.item != null) 
-            {
-                userSequence.Add(slot.item);
-            }
-            else
-            {
-                userSequence.Add(null); 
-            }
+            userSequence.Add(slot.item ?? null);
         }
     }
+    
 
     public void VerifySequence()
     {
-        UpdateUserSequence(); 
+        UpdateUserSequence();
+        bool allCorrect = true;
 
         int wrongCount = 0;
         int correctCount = 0;
 
         for (int i = 0; i < correctSequence.Count; i++)
         {
-            if (i >= userSequence.Count || userSequence[i] != correctSequence[i])
-            {
-                wrongCount++;
-            }
-            else if (i < userSequence.Count && userSequence[i] == correctSequence[i])
+            if (i < userSequence.Count && userSequence[i] == correctSequence[i])
             {
                 correctCount++;
+                slots[i].slotImage.color = Color.green;
+            }
+            else if (i >= userSequence.Count || userSequence[i] != correctSequence[i])
+            {
+                wrongCount++;
+                slots[i].slotImage.color = Color.red;
+                allCorrect = false;
             }
 
             float puntajePorImagenes = correctCount * 10; // Asume que cada respuesta correcta vale 10 puntos

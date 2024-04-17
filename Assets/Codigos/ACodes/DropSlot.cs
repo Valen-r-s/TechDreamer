@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DropSlot : MonoBehaviour, IDropHandler
 {
     public GameObject item;
+    public Image slotImage;
 
     void Start()
     {

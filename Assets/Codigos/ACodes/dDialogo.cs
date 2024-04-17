@@ -8,7 +8,6 @@ public class dDialogo : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
     public TextMeshProUGUI continuar;
-    // public TextMeshProUGUI tutorial; // Eliminado o comentado
     public string[] lines;
     public float textSpeed;
     public bool closeOnEnter = false; // Controla si el diálogo se cierra con Enter
@@ -19,9 +18,7 @@ public class dDialogo : MonoBehaviour
     void Start()
     {
         textComponent.text = string.Empty;
-        continuar.gameObject.SetActive(false); // Asegurarse de que el texto est? oculto al inicio
-        // tutorial.gameObject.SetActive(false); // Eliminado o comentado
-        //QuizPanel.SetActive(false);
+        continuar.gameObject.SetActive(false); // Asegurarse de que el texto esta oculto al inicio
 
         startDialogo();
     }
@@ -31,7 +28,7 @@ public class dDialogo : MonoBehaviour
         {
             if (!closeOnEnter)
             {
-                // Tu lógica actual para manejar el avance del diálogo
+                // Tu lógica para manejar el avance del diálogo
                 if (textComponent.text == lines[index])
                 {
                     NextLine();
@@ -45,7 +42,7 @@ public class dDialogo : MonoBehaviour
             }
             else
             {
-                // Nuevo: Cerrar el diálogo si closeOnEnter está activo
+                //Cerrar el diálogo si closeOnEnter está activo
                 EndDialog();
             }
         }
