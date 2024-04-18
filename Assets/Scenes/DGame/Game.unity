@@ -1808,8 +1808,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c45154aac66764468a0a0e70820ba568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogPanel: {fileID: 0}
-  dialogText: {fileID: 0}
+  dialogPanel: {fileID: 343236010}
+  dialogText: {fileID: 1575883972}
   hints:
   - Fijate bien en elementos como el color y fuente de los textos, asi como el radio
     de las burbujas de texto
@@ -2135,72 +2135,119 @@ MonoBehaviour:
     - {fileID: 21300000, guid: e2edebe1e4c4e714ea3be413ba852eb5, type: 3}
     CorrectAnswer: 2
     Explanations:
-    - "Contraste del fondo del bot\xF3n"
-    - "Contraste del fondo del bot\xF3n"
+    - "Incorrecto, el alto contraste del bot\xF3n \"INVITAR AMIGOS\" mejora la visibilidad
+      y la accesibilidad, indicando claramente la acci\xF3n principal para una experiencia
+      de usuario intuitiva y accesible. "
+    - "\xA1Correcto! El alto contraste del bot\xF3n \"INVITAR AMIGOS\" mejora la
+      visibilidad y la accesibilidad, indicando claramente la acci\xF3n principal
+      para una experiencia de usuario intuitiva y accesible."
   - Question: "Selecciona el dise\xF1o correcto"
     Answers:
     - {fileID: 21300000, guid: 61bf52d76b34ce44ebc785200a7e294c, type: 3}
     - {fileID: 21300000, guid: 81ca3fdc84183614db416acb247712f5, type: 3}
     CorrectAnswer: 1
     Explanations:
-    - Radio del borde
-    - Radio del borde
+    - "Eso es! El uso de bordes redondeados en la barra de b\xFAsqueda suaviza el
+      dise\xF1o y lo hace visualmente m\xE1s amigable, lo que puede mejorar la experiencia
+      del usuario al hacer que la interfaz parezca m\xE1s moderna y accesible. "
+    - "Esta vez no ser\xE1 :( El uso de bordes redondeados en la barra de b\xFAsqueda
+      suaviza el dise\xF1o y lo hace visualmente m\xE1s amigable, lo que puede mejorar
+      la experiencia del usuario al hacer que la interfaz parezca m\xE1s moderna
+      y accesible. "
   - Question: "Selecciona el dise\xF1o correcto"
     Answers:
     - {fileID: 21300000, guid: c358f50c442db804dbc7add54f787902, type: 3}
     - {fileID: 21300000, guid: 0995520f7a4f0594fb643a3194859536, type: 3}
     CorrectAnswer: 2
     Explanations:
-    - "Relaci\xF3n de aspecto de la foto"
-    - "Relaci\xF3n de aspecto de la foto"
+    - "Vuelve a intentarlo. La correcta relaci\xF3n de aspecto en la foto de la motocicleta
+      asegura que se muestre completamente sin recortes ni distorsiones, lo cual
+      es esencial para ofrecer una representaci\xF3n precisa y atractiva del producto,
+      influenciando positivamente la percepci\xF3n y la decisi\xF3n del comprador."
+    - "Sigue as\xED! La correcta relaci\xF3n de aspecto en la foto de la motocicleta
+      asegura que se muestre completamente sin recortes ni distorsiones, lo cual
+      es esencial para ofrecer una representaci\xF3n precisa y atractiva del producto,
+      influenciando positivamente la percepci\xF3n y la decisi\xF3n del comprador."
   - Question: "Selecciona el dise\xF1o correcto"
     Answers:
     - {fileID: 21300000, guid: dd2fda9df2b851443bf760175cc20c86, type: 3}
     - {fileID: 21300000, guid: 6f482ce7114d98c4ba8232b5f20c840b, type: 3}
     CorrectAnswer: 1
     Explanations:
-    - "Alineaci\xF3n vertical de los botones "
-    - "Alineaci\xF3n vertical de los botones "
+    - "Eso es! La correcta alineaci\xF3n de los \xEDconos en sus respectivas burbujas
+      es esencial para el dise\xF1o coherente y la facilidad de uso. Una alineaci\xF3n
+      desigual puede distraer y confundir al usuario, mientras que un dise\xF1o alineado
+      proporciona una navegaci\xF3n intuitiva y comunica un sentido de orden y profesionalismo
+      en la interfaz.       "
+    - "Incorrecto. La correcta alineaci\xF3n de los \xEDconos en sus respectivas
+      burbujas es esencial para el dise\xF1o coherente y la facilidad de uso. Una
+      alineaci\xF3n desigual puede distraer y confundir al usuario, mientras que
+      un dise\xF1o alineado proporciona una navegaci\xF3n intuitiva y comunica un
+      sentido de orden y profesionalismo en la interfaz."
   - Question: "Selecciona el dise\xF1o correcto"
     Answers:
     - {fileID: 21300000, guid: bfa69d827e46c8a458a629d35645c7e8, type: 3}
     - {fileID: 21300000, guid: 61bf52d76b34ce44ebc785200a7e294c, type: 3}
     CorrectAnswer: 2
     Explanations:
-    - "May\xFAscula del texto"
-    - "May\xFAscula del texto"
+    - "Vuelve a intentarlo. Usar may\xFAsculas en la barra de b\xFAsqueda destaca
+      y unifica el dise\xF1o, mejorando la legibilidad y la experiencia del usuario."
+    - "Perfecto! Usar may\xFAsculas en la barra de b\xFAsqueda destaca y unifica
+      el dise\xF1o, mejorando la legibilidad y la experiencia del usuario."
   - Question: "Selecciona el dise\xF1o correcto"
     Answers:
     - {fileID: 21300000, guid: d9506a94352fd0e49a84ca623b705762, type: 3}
     - {fileID: 21300000, guid: a52ebab868654b54f85787279caa1c58, type: 3}
     CorrectAnswer: 2
     Explanations:
-    - Contraste del texto
-    - Contraste del texto
+    - "Vueve a intentarlo. El contraste insuficiente entre el texto y el fondo puede
+      dificultar la lectura y reducir la accesibilidad, es crucial asegurar que haya
+      suficiente contraste para una legibilidad \xF3ptima y una experiencia de usuario
+      inclusiva."
+    - "Sigue asi! El contraste insuficiente entre el texto y el fondo puede dificultar
+      la lectura y reducir la accesibilidad, es crucial asegurar que haya suficiente
+      contraste para una legibilidad \xF3ptima y una experiencia de usuario inclusiva."
   - Question: "Selecciona el dise\xF1o correcto"
     Answers:
     - {fileID: 21300000, guid: 0995520f7a4f0594fb643a3194859536, type: 3}
     - {fileID: 21300000, guid: 42d99b0a1bc740247b14d9c0997b7c93, type: 3}
     CorrectAnswer: 1
     Explanations:
-    - "Alineaci\xF3n de la etiqueta de precio"
-    - "Alineaci\xF3n de la etiqueta de precio"
+    - "Si que puedes! La alineaci\xF3n del texto dentro de la etiqueta de precio
+      es crucial para la claridad y profesionalismo; un texto desalineado puede distraer
+      y transmitir una falta de atenci\xF3n al detalle, afectando la percepci\xF3n
+      de calidad del anuncio y la confianza del usuario.       "
+    - "Incorrecta. La alineaci\xF3n del texto dentro de la etiqueta de precio es
+      crucial para la claridad y profesionalismo; un texto desalineado puede distraer
+      y transmitir una falta de atenci\xF3n al detalle, afectando la percepci\xF3n
+      de calidad del anuncio y la confianza del usuario.       "
   - Question: "Selecciona el dise\xF1o correcto"
     Answers:
     - {fileID: 21300000, guid: a52ebab868654b54f85787279caa1c58, type: 3}
     - {fileID: 21300000, guid: dc1bbe1c7bce1f14581a88e657cb3299, type: 3}
     CorrectAnswer: 1
     Explanations:
-    - "Error tipogr\xE1fico en el texto"
-    - "Error tipogr\xE1fico en el texto"
+    - "Respuesta erronea. Perfecto! Los errores tipogr\xE1ficos pueden mermar la
+      profesionalidad y la claridad comunicativa. En este caso, \"nombe\" debe corregirse
+      a \"nombre\" para as\xED asefurar una comunicaci\xF3n clara y sin distracciones"
+    - "Perfecto! Los errores tipogr\xE1ficos pueden mermar la profesionalidad y la
+      claridad comunicativa. En este caso, \"nombe\" debe corregirse a \"nombre\"
+      para as\xED asefurar una comunicaci\xF3n clara y sin distracciones"
   - Question: "Selecciona el dise\xF1o correcto"
     Answers:
     - {fileID: 21300000, guid: a2b32a5abc6183345a1cb0b264138328, type: 3}
     - {fileID: 21300000, guid: dd2fda9df2b851443bf760175cc20c86, type: 3}
     CorrectAnswer: 2
     Explanations:
-    - "Alineaci\xF3n de iconos"
-    - "Alineaci\xF3n de iconos"
+    - "No te preocupes, a la pr\xF3xima ser\xE1. La alineaci\xF3n centrada de los
+      \xEDconos dentro de sus burbujas es clave para la est\xE9tica y la funcionalidad,
+      ya que crea un equilibrio visual que facilita la identificaci\xF3n r\xE1pida
+      de las funciones por parte de los usuarios, contribuyendo a una interfaz limpia
+      y profesional."
+    - "Perfecto! La alineaci\xF3n centrada de los \xEDconos dentro de sus burbujas
+      es clave para la est\xE9tica y la funcionalidad, ya que crea un equilibrio
+      visual que facilita la identificaci\xF3n r\xE1pida de las funciones por parte
+      de los usuarios, contribuyendo a una interfaz limpia y profesional."
   options:
   - {fileID: 282379229}
   - {fileID: 634173964}
@@ -2214,7 +2261,7 @@ MonoBehaviour:
   DialogoPanel: {fileID: 1749699799}
   nextQ: {fileID: 86885792}
   pause: {fileID: 1423065038}
-  PistaButton: {fileID: 0}
+  PistaButton: {fileID: 568828510}
 --- !u!1 &930478983
 GameObject:
   m_ObjectHideFlags: 0
