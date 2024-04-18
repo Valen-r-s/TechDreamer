@@ -672,6 +672,98 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 293716382}
   m_CullTransparentMesh: 1
+--- !u!1 &343236010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 343236011}
+  - component: {fileID: 343236014}
+  - component: {fileID: 343236013}
+  - component: {fileID: 343236012}
+  m_Layer: 5
+  m_Name: pistas box
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &343236011
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343236010}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.31249997, y: 0.10416666, z: 0.16253331}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1575883971}
+  m_Father: {fileID: 806869090}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -87.49994, y: -155.83331}
+  m_SizeDelta: {x: 1120, y: 630}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &343236012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343236010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.8}
+  m_EffectDistance: {x: 10, y: -20}
+  m_UseGraphicAlpha: 1
+--- !u!114 &343236013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343236010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.69803923}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &343236014
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343236010}
+  m_CullTransparentMesh: 1
 --- !u!1 &400658378
 GameObject:
   m_ObjectHideFlags: 0
@@ -1329,6 +1421,139 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8ad093b7727db419706b0919f11c96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &568828508
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 568828509}
+  - component: {fileID: 568828512}
+  - component: {fileID: 568828511}
+  - component: {fileID: 568828510}
+  m_Layer: 5
+  m_Name: Tips
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &568828509
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568828508}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.6647332, y: 3.4741414, z: 0.48662493}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1550391403}
+  m_Father: {fileID: 806869090}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -342.99997, y: 167.40002}
+  m_SizeDelta: {x: 33.3, y: 10.3}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &568828510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568828508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 568828511}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 707068874}
+        m_TargetAssemblyTypeName: pistas, Assembly-CSharp
+        m_MethodName: Mostrarpista
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &568828511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568828508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 9dadcbdf0a87a144f80935c5e2ec662f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &568828512
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568828508}
+  m_CullTransparentMesh: 1
 --- !u!1 &579008038
 GameObject:
   m_ObjectHideFlags: 0
@@ -1554,6 +1779,61 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 634173964}
   m_CullTransparentMesh: 1
+--- !u!1 &707068873
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 707068875}
+  - component: {fileID: 707068874}
+  m_Layer: 0
+  m_Name: Pistas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &707068874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707068873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c45154aac66764468a0a0e70820ba568, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogPanel: {fileID: 343236010}
+  dialogText: {fileID: 1575883972}
+  hints:
+  - "Mant\xE9n un ojo en la ortograf\xEDa y las may\xFAsculas. A veces las diferencias
+    pueden estar en los detalles del texto."
+  - "No te olvides de la alineaci\xF3n y el espacio entre elementos. \xA1A veces
+    las diferencias se esconden en la disposici\xF3n!"
+  - Fijate bien en elementos como el color y fuente de los textos, asi como el radio
+    de las burbujas de texto
+  - "No te olvides de revisar los bordes y los contornos. Las diferencias a veces
+    se esconden en peque\xF1os detalles visuales."
+--- !u!4 &707068875
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707068873}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 953.6251, y: 172, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &773781793
 GameObject:
   m_ObjectHideFlags: 0
@@ -1722,7 +2002,9 @@ RectTransform:
   - {fileID: 1749699803}
   - {fileID: 1506480395}
   - {fileID: 1423065041}
+  - {fileID: 343236011}
   - {fileID: 400658382}
+  - {fileID: 568828509}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1859,72 +2141,119 @@ MonoBehaviour:
     - {fileID: 21300000, guid: e2edebe1e4c4e714ea3be413ba852eb5, type: 3}
     CorrectAnswer: 2
     Explanations:
-    - "Contraste del fondo del bot\xF3n"
-    - "Contraste del fondo del bot\xF3n"
+    - "Incorrecto, el alto contraste del bot\xF3n \"INVITAR AMIGOS\" mejora la visibilidad
+      y la accesibilidad, indicando claramente la acci\xF3n principal para una experiencia
+      de usuario intuitiva y accesible. "
+    - "\xA1Correcto! El alto contraste del bot\xF3n \"INVITAR AMIGOS\" mejora la
+      visibilidad y la accesibilidad, indicando claramente la acci\xF3n principal
+      para una experiencia de usuario intuitiva y accesible."
   - Question: "Selecciona el dise\xF1o correcto"
     Answers:
     - {fileID: 21300000, guid: 61bf52d76b34ce44ebc785200a7e294c, type: 3}
     - {fileID: 21300000, guid: 81ca3fdc84183614db416acb247712f5, type: 3}
     CorrectAnswer: 1
     Explanations:
-    - Radio del borde
-    - Radio del borde
+    - "Eso es! El uso de bordes redondeados en la barra de b\xFAsqueda suaviza el
+      dise\xF1o y lo hace visualmente m\xE1s amigable, lo que puede mejorar la experiencia
+      del usuario al hacer que la interfaz parezca m\xE1s moderna y accesible. "
+    - "Esta vez no ser\xE1 :( El uso de bordes redondeados en la barra de b\xFAsqueda
+      suaviza el dise\xF1o y lo hace visualmente m\xE1s amigable, lo que puede mejorar
+      la experiencia del usuario al hacer que la interfaz parezca m\xE1s moderna
+      y accesible. "
   - Question: "Selecciona el dise\xF1o correcto"
     Answers:
     - {fileID: 21300000, guid: c358f50c442db804dbc7add54f787902, type: 3}
     - {fileID: 21300000, guid: 0995520f7a4f0594fb643a3194859536, type: 3}
     CorrectAnswer: 2
     Explanations:
-    - "Relaci\xF3n de aspecto de la foto"
-    - "Relaci\xF3n de aspecto de la foto"
+    - "Vuelve a intentarlo. La correcta relaci\xF3n de aspecto en la foto de la motocicleta
+      asegura que se muestre completamente sin recortes ni distorsiones, lo cual
+      es esencial para ofrecer una representaci\xF3n precisa y atractiva del producto,
+      influenciando positivamente la percepci\xF3n y la decisi\xF3n del comprador."
+    - "Sigue as\xED! La correcta relaci\xF3n de aspecto en la foto de la motocicleta
+      asegura que se muestre completamente sin recortes ni distorsiones, lo cual
+      es esencial para ofrecer una representaci\xF3n precisa y atractiva del producto,
+      influenciando positivamente la percepci\xF3n y la decisi\xF3n del comprador."
   - Question: "Selecciona el dise\xF1o correcto"
     Answers:
     - {fileID: 21300000, guid: dd2fda9df2b851443bf760175cc20c86, type: 3}
     - {fileID: 21300000, guid: 6f482ce7114d98c4ba8232b5f20c840b, type: 3}
     CorrectAnswer: 1
     Explanations:
-    - "Alineaci\xF3n vertical de los botones "
-    - "Alineaci\xF3n vertical de los botones "
+    - "Eso es! La correcta alineaci\xF3n de los \xEDconos en sus respectivas burbujas
+      es esencial para el dise\xF1o coherente y la facilidad de uso. Una alineaci\xF3n
+      desigual puede distraer y confundir al usuario, mientras que un dise\xF1o alineado
+      proporciona una navegaci\xF3n intuitiva y comunica un sentido de orden y profesionalismo
+      en la interfaz.       "
+    - "Incorrecto. La correcta alineaci\xF3n de los \xEDconos en sus respectivas
+      burbujas es esencial para el dise\xF1o coherente y la facilidad de uso. Una
+      alineaci\xF3n desigual puede distraer y confundir al usuario, mientras que
+      un dise\xF1o alineado proporciona una navegaci\xF3n intuitiva y comunica un
+      sentido de orden y profesionalismo en la interfaz."
   - Question: "Selecciona el dise\xF1o correcto"
     Answers:
     - {fileID: 21300000, guid: bfa69d827e46c8a458a629d35645c7e8, type: 3}
     - {fileID: 21300000, guid: 61bf52d76b34ce44ebc785200a7e294c, type: 3}
     CorrectAnswer: 2
     Explanations:
-    - "May\xFAscula del texto"
-    - "May\xFAscula del texto"
+    - "Vuelve a intentarlo. Usar may\xFAsculas en la barra de b\xFAsqueda destaca
+      y unifica el dise\xF1o, mejorando la legibilidad y la experiencia del usuario."
+    - "Perfecto! Usar may\xFAsculas en la barra de b\xFAsqueda destaca y unifica
+      el dise\xF1o, mejorando la legibilidad y la experiencia del usuario."
   - Question: "Selecciona el dise\xF1o correcto"
     Answers:
     - {fileID: 21300000, guid: d9506a94352fd0e49a84ca623b705762, type: 3}
     - {fileID: 21300000, guid: a52ebab868654b54f85787279caa1c58, type: 3}
     CorrectAnswer: 2
     Explanations:
-    - Contraste del texto
-    - Contraste del texto
+    - "Vueve a intentarlo. El contraste insuficiente entre el texto y el fondo puede
+      dificultar la lectura y reducir la accesibilidad, es crucial asegurar que haya
+      suficiente contraste para una legibilidad \xF3ptima y una experiencia de usuario
+      inclusiva."
+    - "Sigue asi! El contraste insuficiente entre el texto y el fondo puede dificultar
+      la lectura y reducir la accesibilidad, es crucial asegurar que haya suficiente
+      contraste para una legibilidad \xF3ptima y una experiencia de usuario inclusiva."
   - Question: "Selecciona el dise\xF1o correcto"
     Answers:
     - {fileID: 21300000, guid: 0995520f7a4f0594fb643a3194859536, type: 3}
     - {fileID: 21300000, guid: 42d99b0a1bc740247b14d9c0997b7c93, type: 3}
     CorrectAnswer: 1
     Explanations:
-    - "Alineaci\xF3n de la etiqueta de precio"
-    - "Alineaci\xF3n de la etiqueta de precio"
+    - "Si que puedes! La alineaci\xF3n del texto dentro de la etiqueta de precio
+      es crucial para la claridad y profesionalismo; un texto desalineado puede distraer
+      y transmitir una falta de atenci\xF3n al detalle, afectando la percepci\xF3n
+      de calidad del anuncio y la confianza del usuario.       "
+    - "Incorrecta. La alineaci\xF3n del texto dentro de la etiqueta de precio es
+      crucial para la claridad y profesionalismo; un texto desalineado puede distraer
+      y transmitir una falta de atenci\xF3n al detalle, afectando la percepci\xF3n
+      de calidad del anuncio y la confianza del usuario.       "
   - Question: "Selecciona el dise\xF1o correcto"
     Answers:
     - {fileID: 21300000, guid: a52ebab868654b54f85787279caa1c58, type: 3}
     - {fileID: 21300000, guid: dc1bbe1c7bce1f14581a88e657cb3299, type: 3}
     CorrectAnswer: 1
     Explanations:
-    - "Error tipogr\xE1fico en el texto"
-    - "Error tipogr\xE1fico en el texto"
+    - "Respuesta erronea. Perfecto! Los errores tipogr\xE1ficos pueden mermar la
+      profesionalidad y la claridad comunicativa. En este caso, \"nombe\" debe corregirse
+      a \"nombre\" para as\xED asefurar una comunicaci\xF3n clara y sin distracciones"
+    - "Perfecto! Los errores tipogr\xE1ficos pueden mermar la profesionalidad y la
+      claridad comunicativa. En este caso, \"nombe\" debe corregirse a \"nombre\"
+      para as\xED asefurar una comunicaci\xF3n clara y sin distracciones"
   - Question: "Selecciona el dise\xF1o correcto"
     Answers:
     - {fileID: 21300000, guid: a2b32a5abc6183345a1cb0b264138328, type: 3}
     - {fileID: 21300000, guid: dd2fda9df2b851443bf760175cc20c86, type: 3}
     CorrectAnswer: 2
     Explanations:
-    - "Alineaci\xF3n de iconos"
-    - "Alineaci\xF3n de iconos"
+    - "No te preocupes, a la pr\xF3xima ser\xE1. La alineaci\xF3n centrada de los
+      \xEDconos dentro de sus burbujas es clave para la est\xE9tica y la funcionalidad,
+      ya que crea un equilibrio visual que facilita la identificaci\xF3n r\xE1pida
+      de las funciones por parte de los usuarios, contribuyendo a una interfaz limpia
+      y profesional."
+    - "Perfecto! La alineaci\xF3n centrada de los \xEDconos dentro de sus burbujas
+      es clave para la est\xE9tica y la funcionalidad, ya que crea un equilibrio
+      visual que facilita la identificaci\xF3n r\xE1pida de las funciones por parte
+      de los usuarios, contribuyendo a una interfaz limpia y profesional."
   options:
   - {fileID: 282379229}
   - {fileID: 634173964}
@@ -1938,6 +2267,7 @@ MonoBehaviour:
   DialogoPanel: {fileID: 1749699799}
   nextQ: {fileID: 86885792}
   pause: {fileID: 1423065038}
+  PistaButton: {fileID: 568828510}
 --- !u!1 &930478983
 GameObject:
   m_ObjectHideFlags: 0
@@ -2047,8 +2377,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2616,6 +2946,274 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1550391402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1550391403}
+  - component: {fileID: 1550391405}
+  - component: {fileID: 1550391404}
+  m_Layer: 5
+  m_Name: Btn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1550391403
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550391402}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.83687687, y: 0.46108916, z: 0.46108916}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 568828509}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.3, y: 0.9}
+  m_SizeDelta: {x: 76.5, y: 33.7}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1550391404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550391402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Pista
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 12
+  m_fontSizeBase: 12
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1550391405
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550391402}
+  m_CullTransparentMesh: 1
+--- !u!1 &1575883970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1575883971}
+  - component: {fileID: 1575883973}
+  - component: {fileID: 1575883972}
+  m_Layer: 5
+  m_Name: Pistas text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1575883971
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575883970}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.9168047, y: 4.765657, z: 3.9889865}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 343236011}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -2, y: -2}
+  m_SizeDelta: {x: 970, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1575883972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575883970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: New Text
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 35
+  m_fontSizeBase: 35
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1575883973
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575883970}
+  m_CullTransparentMesh: 1
 --- !u!1 &1593330382
 GameObject:
   m_ObjectHideFlags: 0
@@ -3396,3 +3994,4 @@ SceneRoots:
   - {fileID: 890124085}
   - {fileID: 1649164261}
   - {fileID: 1685337137}
+  - {fileID: 707068875}

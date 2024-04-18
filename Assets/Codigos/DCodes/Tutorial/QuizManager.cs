@@ -15,7 +15,8 @@ public class QuizManager : MonoBehaviour
     public GameObject ExplanationPanel;
     public GameObject StartButton;
     public GameObject ReTakeButton;
-    public Button NextQuestionButton; 
+    public Button NextQuestionButton;
+    public Button PistaButton;
 
     private void Start()
     {
@@ -31,7 +32,8 @@ public class QuizManager : MonoBehaviour
         StartButton.SetActive(true);
         ReTakeButton.SetActive(true);
         ExplanationPanel.SetActive(true);
-        NextQuestionButton.gameObject.SetActive(false); 
+        NextQuestionButton.gameObject.SetActive(false);
+        PistaButton.gameObject.SetActive(false); 
         ExplanationText.text = "¡Perfecto! Has finalizado el quiz, ahora puedes volver a tomarlo o empezar el juego.";
     }
 

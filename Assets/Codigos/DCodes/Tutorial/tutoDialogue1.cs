@@ -65,7 +65,6 @@ public class tutoDialogue1 : MonoBehaviour
             StartCoroutine(typeLine());
         }
 
-        mostrarContinuar(false);
     }
 
     void mostrarContinuar(bool mostrar)
