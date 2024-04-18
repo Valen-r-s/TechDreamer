@@ -25,7 +25,6 @@ public class pistas : MonoBehaviour
         {
             // Si el panel ya está activo, ocultarlo
             dialogPanel.SetActive(false);
-            StartCoroutine(WaitAndClosePanel());
         }
         else
         {
@@ -41,15 +40,6 @@ public class pistas : MonoBehaviour
                 currentHintIndex = 0;
             }
         }
-    }
-
-    IEnumerator WaitAndClosePanel()
-    {
-        // Espera un breve momento para evitar conflictos de input
-        isWaitingToClose = true;
-        yield return new WaitForSeconds(0.01f);
-        isWaitingToClose = false;
-        dialogPanel.SetActive(false);
     }
 
     void Update()
