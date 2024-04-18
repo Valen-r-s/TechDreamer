@@ -1811,8 +1811,14 @@ MonoBehaviour:
   dialogPanel: {fileID: 343236010}
   dialogText: {fileID: 1575883972}
   hints:
+  - "Mant\xE9n un ojo en la ortograf\xEDa y las may\xFAsculas. A veces las diferencias
+    pueden estar en los detalles del texto."
+  - "No te olvides de la alineaci\xF3n y el espacio entre elementos. \xA1A veces
+    las diferencias se esconden en la disposici\xF3n!"
   - Fijate bien en elementos como el color y fuente de los textos, asi como el radio
     de las burbujas de texto
+  - "No te olvides de revisar los bordes y los contornos. Las diferencias a veces
+    se esconden en peque\xF1os detalles visuales."
 --- !u!4 &707068875
 Transform:
   m_ObjectHideFlags: 0
@@ -2371,8 +2377,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
