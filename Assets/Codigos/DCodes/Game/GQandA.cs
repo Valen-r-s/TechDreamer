@@ -7,5 +7,5 @@ public class GQandA
     public Sprite[] Answers;
     public int CorrectAnswer;
     public string[] Explanations;
-
+    public string Hint;
 }

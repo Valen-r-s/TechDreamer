@@ -690,7 +690,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &343236011
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1504,9 +1504,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 707068874}
-        m_TargetAssemblyTypeName: pistas, Assembly-CSharp
-        m_MethodName: Mostrarpista
+      - m_Target: {fileID: 890124086}
+        m_TargetAssemblyTypeName: GQuizManager, Assembly-CSharp
+        m_MethodName: ShowHint
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1779,61 +1779,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 634173964}
   m_CullTransparentMesh: 1
---- !u!1 &707068873
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 707068875}
-  - component: {fileID: 707068874}
-  m_Layer: 0
-  m_Name: Pistas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &707068874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 707068873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c45154aac66764468a0a0e70820ba568, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogPanel: {fileID: 343236010}
-  dialogText: {fileID: 1575883972}
-  hints:
-  - "Mant\xE9n un ojo en la ortograf\xEDa y las may\xFAsculas. A veces las diferencias
-    pueden estar en los detalles del texto."
-  - "No te olvides de la alineaci\xF3n y el espacio entre elementos. \xA1A veces
-    las diferencias se esconden en la disposici\xF3n!"
-  - Fijate bien en elementos como el color y fuente de los textos, asi como el radio
-    de las burbujas de texto
-  - "No te olvides de revisar los bordes y los contornos. Las diferencias a veces
-    se esconden en peque\xF1os detalles visuales."
---- !u!4 &707068875
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 707068873}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 953.6251, y: 172, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &773781793
 GameObject:
   m_ObjectHideFlags: 0
@@ -2141,119 +2086,109 @@ MonoBehaviour:
     - {fileID: 21300000, guid: e2edebe1e4c4e714ea3be413ba852eb5, type: 3}
     CorrectAnswer: 2
     Explanations:
-    - "Incorrecto, el alto contraste del bot\xF3n \"INVITAR AMIGOS\" mejora la visibilidad
-      y la accesibilidad, indicando claramente la acci\xF3n principal para una experiencia
-      de usuario intuitiva y accesible. "
-    - "\xA1Correcto! El alto contraste del bot\xF3n \"INVITAR AMIGOS\" mejora la
-      visibilidad y la accesibilidad, indicando claramente la acci\xF3n principal
-      para una experiencia de usuario intuitiva y accesible."
+    - "Incorrecto, El alto contraste del bot\xF3n 'INVITAR AMIGOS' mejora su visibilidad
+      y accesibilidad, facilitando una experiencia de usuario m\xE1s intuitiva."
+    - "\xA1Correcto! El alto contraste del bot\xF3n 'INVITAR AMIGOS' mejora su visibilidad
+      y accesibilidad, facilitando una experiencia de usuario m\xE1s intuitiva."
+    Hint: "Presta atenci\xF3n a lo que resalta m\xE1s de lo habitual."
   - Question: "Selecciona el dise\xF1o correcto"
     Answers:
     - {fileID: 21300000, guid: 61bf52d76b34ce44ebc785200a7e294c, type: 3}
     - {fileID: 21300000, guid: 81ca3fdc84183614db416acb247712f5, type: 3}
     CorrectAnswer: 1
     Explanations:
-    - "Eso es! El uso de bordes redondeados en la barra de b\xFAsqueda suaviza el
-      dise\xF1o y lo hace visualmente m\xE1s amigable, lo que puede mejorar la experiencia
-      del usuario al hacer que la interfaz parezca m\xE1s moderna y accesible. "
-    - "Esta vez no ser\xE1 :( El uso de bordes redondeados en la barra de b\xFAsqueda
-      suaviza el dise\xF1o y lo hace visualmente m\xE1s amigable, lo que puede mejorar
-      la experiencia del usuario al hacer que la interfaz parezca m\xE1s moderna
-      y accesible. "
+    - "Eso es! Los bordes redondeados en la barra de b\xFAsqueda suavizan el dise\xF1o,
+      haci\xE9ndolo m\xE1s amigable y moderno para una mejor experiencia de usuario."
+    - "Esta vez no ser\xE1 :( Los bordes redondeados en la barra de b\xFAsqueda suavizan
+      el dise\xF1o, haci\xE9ndolo m\xE1s amigable y moderno para una mejor experiencia
+      de usuario."
+    Hint: Observa los contornos; no todos siguen la misma curva.
   - Question: "Selecciona el dise\xF1o correcto"
     Answers:
     - {fileID: 21300000, guid: c358f50c442db804dbc7add54f787902, type: 3}
     - {fileID: 21300000, guid: 0995520f7a4f0594fb643a3194859536, type: 3}
     CorrectAnswer: 2
     Explanations:
-    - "Vuelve a intentarlo. La correcta relaci\xF3n de aspecto en la foto de la motocicleta
-      asegura que se muestre completamente sin recortes ni distorsiones, lo cual
-      es esencial para ofrecer una representaci\xF3n precisa y atractiva del producto,
-      influenciando positivamente la percepci\xF3n y la decisi\xF3n del comprador."
-    - "Sigue as\xED! La correcta relaci\xF3n de aspecto en la foto de la motocicleta
-      asegura que se muestre completamente sin recortes ni distorsiones, lo cual
-      es esencial para ofrecer una representaci\xF3n precisa y atractiva del producto,
-      influenciando positivamente la percepci\xF3n y la decisi\xF3n del comprador."
+    - "Vuelve a intentarlo. La correcta relaci\xF3n de aspecto de la foto de la motocicleta
+      evita recortes y distorsiones, ofreciendo una representaci\xF3n precisa y atractiva
+      que mejora la percepci\xF3n del producto."
+    - "Sigue as\xED! La correcta relaci\xF3n de aspecto de la foto de la motocicleta
+      evita recortes y distorsiones, ofreciendo una representaci\xF3n precisa y atractiva
+      que mejora la percepci\xF3n del producto."
+    Hint: "Las im\xE1genes deber\xEDan aprovechar todo el espacio disponible."
   - Question: "Selecciona el dise\xF1o correcto"
     Answers:
     - {fileID: 21300000, guid: dd2fda9df2b851443bf760175cc20c86, type: 3}
     - {fileID: 21300000, guid: 6f482ce7114d98c4ba8232b5f20c840b, type: 3}
     CorrectAnswer: 1
     Explanations:
-    - "Eso es! La correcta alineaci\xF3n de los \xEDconos en sus respectivas burbujas
-      es esencial para el dise\xF1o coherente y la facilidad de uso. Una alineaci\xF3n
-      desigual puede distraer y confundir al usuario, mientras que un dise\xF1o alineado
-      proporciona una navegaci\xF3n intuitiva y comunica un sentido de orden y profesionalismo
-      en la interfaz.       "
-    - "Incorrecto. La correcta alineaci\xF3n de los \xEDconos en sus respectivas
-      burbujas es esencial para el dise\xF1o coherente y la facilidad de uso. Una
-      alineaci\xF3n desigual puede distraer y confundir al usuario, mientras que
-      un dise\xF1o alineado proporciona una navegaci\xF3n intuitiva y comunica un
-      sentido de orden y profesionalismo en la interfaz."
+    - "Eso es! Una correcta alineaci\xF3n de los \xEDconos en las burbujas asegura
+      un dise\xF1o coherente y facilita la navegaci\xF3n, transmitiendo profesionalismo
+      y orden en la interfaz."
+    - "Incorrecto. Una correcta alineaci\xF3n de los \xEDconos en las burbujas asegura
+      un dise\xF1o coherente y facilita la navegaci\xF3n, transmitiendo profesionalismo
+      y orden en la interfaz."
+    Hint: "Checa si los elementos est\xE1n en perfecta formaci\xF3n."
   - Question: "Selecciona el dise\xF1o correcto"
     Answers:
     - {fileID: 21300000, guid: bfa69d827e46c8a458a629d35645c7e8, type: 3}
     - {fileID: 21300000, guid: 61bf52d76b34ce44ebc785200a7e294c, type: 3}
     CorrectAnswer: 2
     Explanations:
-    - "Vuelve a intentarlo. Usar may\xFAsculas en la barra de b\xFAsqueda destaca
-      y unifica el dise\xF1o, mejorando la legibilidad y la experiencia del usuario."
-    - "Perfecto! Usar may\xFAsculas en la barra de b\xFAsqueda destaca y unifica
-      el dise\xF1o, mejorando la legibilidad y la experiencia del usuario."
+    - "Vuelve a intentarlo. Usar may\xFAsculas en la barra de b\xFAsqueda mejora
+      la legibilidad y unifica el dise\xF1o, optimizando la experiencia del usuario."
+    - "Perfecto! Usar may\xFAsculas en la barra de b\xFAsqueda mejora la legibilidad
+      y unifica el dise\xF1o, optimizando la experiencia del usuario."
+    Hint: Observa las iniciales, no todas siguen la misma regla.
   - Question: "Selecciona el dise\xF1o correcto"
     Answers:
     - {fileID: 21300000, guid: d9506a94352fd0e49a84ca623b705762, type: 3}
     - {fileID: 21300000, guid: a52ebab868654b54f85787279caa1c58, type: 3}
     CorrectAnswer: 2
     Explanations:
-    - "Vueve a intentarlo. El contraste insuficiente entre el texto y el fondo puede
-      dificultar la lectura y reducir la accesibilidad, es crucial asegurar que haya
-      suficiente contraste para una legibilidad \xF3ptima y una experiencia de usuario
-      inclusiva."
-    - "Sigue asi! El contraste insuficiente entre el texto y el fondo puede dificultar
-      la lectura y reducir la accesibilidad, es crucial asegurar que haya suficiente
-      contraste para una legibilidad \xF3ptima y una experiencia de usuario inclusiva."
+    - Vueve a intentarlo. Es crucial aumentar el contraste entre el texto y el fondo
+      para facilitar la lectura y asegurar una experiencia de usuario accesible e
+      inclusiva.
+    - Sigue asi! Es crucial aumentar el contraste entre el texto y el fondo para
+      facilitar la lectura y asegurar una experiencia de usuario accesible e inclusiva.
+    Hint: "Mira cu\xE1l texto resalta m\xE1s contra su fondo."
   - Question: "Selecciona el dise\xF1o correcto"
     Answers:
     - {fileID: 21300000, guid: 0995520f7a4f0594fb643a3194859536, type: 3}
     - {fileID: 21300000, guid: 42d99b0a1bc740247b14d9c0997b7c93, type: 3}
     CorrectAnswer: 1
     Explanations:
-    - "Si que puedes! La alineaci\xF3n del texto dentro de la etiqueta de precio
-      es crucial para la claridad y profesionalismo; un texto desalineado puede distraer
-      y transmitir una falta de atenci\xF3n al detalle, afectando la percepci\xF3n
-      de calidad del anuncio y la confianza del usuario.       "
-    - "Incorrecta. La alineaci\xF3n del texto dentro de la etiqueta de precio es
-      crucial para la claridad y profesionalismo; un texto desalineado puede distraer
-      y transmitir una falta de atenci\xF3n al detalle, afectando la percepci\xF3n
-      de calidad del anuncio y la confianza del usuario.       "
+    - "\xA1Correcto! Una correcta alineaci\xF3n del texto en la etiqueta de precio
+      mejora la claridad y el profesionalismo, mientras que un texto desalineado
+      puede restar calidad y confianza al anuncio."
+    - "Incorrecto. Una correcta alineaci\xF3n del texto en la etiqueta de precio
+      mejora la claridad y el profesionalismo, mientras que un texto desalineado
+      puede restar calidad y confianza al anuncio."
+    Hint: "Revisa si el texto est\xE1 perfectamente enmarcado dentro de sus l\xEDmites."
   - Question: "Selecciona el dise\xF1o correcto"
     Answers:
     - {fileID: 21300000, guid: a52ebab868654b54f85787279caa1c58, type: 3}
     - {fileID: 21300000, guid: dc1bbe1c7bce1f14581a88e657cb3299, type: 3}
     CorrectAnswer: 1
     Explanations:
-    - "Respuesta erronea. Perfecto! Los errores tipogr\xE1ficos pueden mermar la
-      profesionalidad y la claridad comunicativa. En este caso, \"nombe\" debe corregirse
-      a \"nombre\" para as\xED asefurar una comunicaci\xF3n clara y sin distracciones"
-    - "Perfecto! Los errores tipogr\xE1ficos pueden mermar la profesionalidad y la
-      claridad comunicativa. En este caso, \"nombe\" debe corregirse a \"nombre\"
-      para as\xED asefurar una comunicaci\xF3n clara y sin distracciones"
+    - "Perfecto! Corregir el error tipogr\xE1fico de 'nombe' a 'nombre' mejora la
+      profesionalidad y asegura una comunicaci\xF3n clara."
+    - "Respuesta erronea. Corregir el error tipogr\xE1fico de 'nombe' a 'nombre'
+      mejora la profesionalidad y asegura una comunicaci\xF3n clara."
+    Hint: "F\xEDjate bien, una palabra no est\xE1 como deber\xEDa."
   - Question: "Selecciona el dise\xF1o correcto"
     Answers:
     - {fileID: 21300000, guid: a2b32a5abc6183345a1cb0b264138328, type: 3}
     - {fileID: 21300000, guid: dd2fda9df2b851443bf760175cc20c86, type: 3}
     CorrectAnswer: 2
     Explanations:
-    - "No te preocupes, a la pr\xF3xima ser\xE1. La alineaci\xF3n centrada de los
-      \xEDconos dentro de sus burbujas es clave para la est\xE9tica y la funcionalidad,
-      ya que crea un equilibrio visual que facilita la identificaci\xF3n r\xE1pida
-      de las funciones por parte de los usuarios, contribuyendo a una interfaz limpia
-      y profesional."
-    - "Perfecto! La alineaci\xF3n centrada de los \xEDconos dentro de sus burbujas
-      es clave para la est\xE9tica y la funcionalidad, ya que crea un equilibrio
-      visual que facilita la identificaci\xF3n r\xE1pida de las funciones por parte
-      de los usuarios, contribuyendo a una interfaz limpia y profesional."
+    - "No te preocupes, a la pr\xF3xima ser\xE1.La alineaci\xF3n centrada de los
+      \xEDconos en sus burbujas mejora la est\xE9tica y funcionalidad, facilitando
+      la identificaci\xF3n r\xE1pida y contribuyendo a una interfaz profesional."
+    - "Perfecto! La alineaci\xF3n centrada de los \xEDconos en sus burbujas mejora
+      la est\xE9tica y funcionalidad, facilitando la identificaci\xF3n r\xE1pida
+      y contribuyendo a una interfaz profesional."
+    Hint: Todos los objetos deben estar centrados dentro de su espacio asignado.
   options:
   - {fileID: 282379229}
   - {fileID: 634173964}
@@ -2268,6 +2203,8 @@ MonoBehaviour:
   nextQ: {fileID: 86885792}
   pause: {fileID: 1423065038}
   PistaButton: {fileID: 568828510}
+  hintPanel: {fileID: 343236010}
+  HintText: {fileID: 1575883972}
 --- !u!1 &930478983
 GameObject:
   m_ObjectHideFlags: 0
@@ -2279,7 +2216,6 @@ GameObject:
   - component: {fileID: 930478984}
   - component: {fileID: 930478986}
   - component: {fileID: 930478987}
-  - component: {fileID: 930478985}
   m_Layer: 5
   m_Name: DialogueBox1
   m_TagString: Untagged
@@ -2306,22 +2242,6 @@ RectTransform:
   m_AnchoredPosition: {x: -2, y: -2}
   m_SizeDelta: {x: 970, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &930478985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 930478983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 580b557f290ae6844af3fdb5abf38cf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Dialogue: {fileID: 930478987}
-  lines:
-  - 
-  textSpeed: 0.02
 --- !u!222 &930478986
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2350,7 +2270,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -3137,7 +3057,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -3164,8 +3084,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3994,4 +3914,3 @@ SceneRoots:
   - {fileID: 890124085}
   - {fileID: 1649164261}
   - {fileID: 1685337137}
-  - {fileID: 707068875}

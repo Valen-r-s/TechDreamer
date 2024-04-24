@@ -11,18 +11,22 @@ public class QuizManager : MonoBehaviour
     public int currentQuestion;
     public TextMeshProUGUI QuestionTxt;
     public TextMeshProUGUI ExplanationText;
+    public GameObject hintPanel;
+    public TextMeshProUGUI HintText;
     public GameObject QuizPanel;
     public GameObject ExplanationPanel;
     public GameObject StartButton;
     public GameObject ReTakeButton;
     public Button NextQuestionButton;
     public Button PistaButton;
+    public Button HomeButton;
 
     private void Start()
     {
         StartButton.SetActive(false);
         ReTakeButton.SetActive(false);
         NextQuestionButton.gameObject.SetActive(false);
+        HomeButton.gameObject.SetActive(false);
         GenerateQuestion();
     }
 
@@ -33,7 +37,8 @@ public class QuizManager : MonoBehaviour
         ReTakeButton.SetActive(true);
         ExplanationPanel.SetActive(true);
         NextQuestionButton.gameObject.SetActive(false);
-        PistaButton.gameObject.SetActive(false); 
+        PistaButton.gameObject.SetActive(false);
+        HomeButton.gameObject.SetActive(true); 
         ExplanationText.text = "¡Perfecto! Has finalizado el quiz, ahora puedes volver a tomarlo o empezar el juego.";
     }
 
@@ -93,4 +98,32 @@ public class QuizManager : MonoBehaviour
             GameOver();
         }
     }
+
+    public void ShowHint()
+    {
+        if (hintPanel.activeInHierarchy)
+        {
+            hintPanel.SetActive(false);
+        }
+        else
+        {
+            HintText.text = QnA[currentQuestion].Hint; 
+            hintPanel.SetActive(true);
+        }
+    }
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0)) 
+        {
+            if (hintPanel.activeInHierarchy)
+            {
+                RectTransform rect = hintPanel.GetComponent<RectTransform>();
+                if (!RectTransformUtility.RectangleContainsScreenPoint(rect, Input.mousePosition, null))
+                {
+                    hintPanel.SetActive(false);
+                }
+            }
+        }
+    }
+
 }

@@ -25,6 +25,9 @@ public class GQuizManager : MonoBehaviour
     public Button pause;
     public Button PistaButton;
 
+    public GameObject hintPanel;
+    public TextMeshProUGUI HintText;
+
     private void Start()
     {
         totalQuestions = QnA.Count;
@@ -104,6 +107,32 @@ public class GQuizManager : MonoBehaviour
         else
         {
             GameOver();
+        }
+    }
+    public void ShowHint()
+    {
+        if (hintPanel.activeInHierarchy)
+        {
+            hintPanel.SetActive(false);
+        }
+        else
+        {
+            HintText.text = QnA[currentQuestion].Hint;
+            hintPanel.SetActive(true);
+        }
+    }
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (hintPanel.activeInHierarchy)
+            {
+                RectTransform rect = hintPanel.GetComponent<RectTransform>();
+                if (!RectTransformUtility.RectangleContainsScreenPoint(rect, Input.mousePosition, null))
+                {
+                    hintPanel.SetActive(false);
+                }
+            }
         }
     }
 }
