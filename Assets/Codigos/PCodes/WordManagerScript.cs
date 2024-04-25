@@ -10,7 +10,7 @@ public class WordManagerScript : MonoBehaviour
     public GameObject wordPrefab;
     public Transform spawnPoint;
     public float speed = 5f;
-    private Vector3 targetPosition = new Vector3(0f, -4.49f, 0f);
+    private Vector3 targetPosition = new Vector3(0f, -4.49f, 0f); 
     public int collisionCount = 0;  // Contador de colisiones
     public int maxCollisions = 3;   // Número máximo de colisiones antes del Game Over
 
@@ -184,51 +184,14 @@ public class WordManagerScript : MonoBehaviour
 
     void SpawnWord()
     {
-        // Comprobación de nulidad para 'words'
-        if (words == null || words.Count == 0)
-        {
-            Debug.LogError("Lista 'words' no asignada o vacía.");
-            return;
-        }
-
-        // Comprobación de nulidad para 'wordPrefab'
-        if (wordPrefab == null)
-        {
-            Debug.LogError("Prefab 'wordPrefab' no asignado.");
-            return;
-        }
-
-        // Comprobación de nulidad para 'spawnPoint'
-        if (spawnPoint == null)
-        {
-            Debug.LogError("'spawnPoint' no asignado.");
-            return;
-        }
-
         string randomWord = words[Random.Range(0, words.Count)];
         float randomX = Random.Range(-10f, 10f);
         Vector3 spawnPosition = new Vector3(randomX, spawnPoint.position.y, spawnPoint.position.z);
         GameObject wordObject = Instantiate(wordPrefab, spawnPosition, Quaternion.identity, transform);
-
-        // Asegúrate de que 'wordObject' se haya instanciado correctamente.
-        if (wordObject == null)
-        {
-            Debug.LogError("No se pudo instanciar el prefab.");
-            return;
-        }
+        wordObjects.Add(wordObject);
 
         TextMeshPro textMeshPro = wordObject.GetComponent<TextMeshPro>();
-
-        // Comprobación de nulidad para 'TextMeshPro'
-        if (textMeshPro == null)
-        {
-            Debug.LogError("Componente TextMeshPro no encontrado en el prefab.");
-            Destroy(wordObject);
-            return;
-        }
-
         textMeshPro.text = randomWord;
-        wordObjects.Add(wordObject);
     }
-
 }
+
