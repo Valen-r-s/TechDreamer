@@ -1,0 +1,420 @@
+[33mcommit 4b6fd058aa5ad7305721f0084ccdda4536fc9fa2[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 2011b33 274d742
+Author: LiaLopez1 <natalialopezramirez@gmail.com>
+Date:   Wed Apr 24 23:07:12 2024 -0500
+
+    ee no se
+
+[33mcommit 2011b339c64d72ba732e599a8262d34659b68c84[m
+Author: LiaLopez1 <natalialopezramirez@gmail.com>
+Date:   Wed Apr 24 23:03:06 2024 -0500
+
+    Arreglos de interfaz
+    
+    Indicador de objetos y camara.
+
+[33mcommit 274d742e51c96cdf383c38a560cfb1211ec88edd[m
+Author: Valentina Restrepo <valentina.re.san@gmail.com>
+Date:   Wed Apr 24 21:59:40 2024 -0500
+
+    ajustes
+
+[33mcommit dcf25d3a6547926c2ce216d2f402afd1e43bf55e[m
+Author: Juandejdoc <est.juand.orozco@unimilitar.edu.co>
+Date:   Wed Apr 24 18:40:21 2024 -0500
+
+    actualizacion juego porgramacion
+
+[33mcommit b849731e1bde1660a51e9b8668eac6486485c279[m
+Author: Juandejdoc <est.juand.orozco@unimilitar.edu.co>
+Date:   Wed Apr 24 18:37:29 2024 -0500
+
+    actualice los paneles
+
+[33mcommit 5ff5ad44d95090269a93be47b0bed81767a13ff2[m
+Author: Juandejdoc <est.juand.orozco@unimilitar.edu.co>
+Date:   Wed Apr 24 18:34:43 2024 -0500
+
+    subi el prefab
+
+[33mcommit 45e06a9a709c75e01cdf47c908d4c949229ff99a[m
+Author: Juandejdoc <est.juand.orozco@unimilitar.edu.co>
+Date:   Wed Apr 24 18:29:46 2024 -0500
+
+    agrege juego programacion
+
+[33mcommit a18970936084765a1d4395094707e8382f67eb53[m
+Author: Valentina Restrepo <valentina.re.san@gmail.com>
+Date:   Wed Apr 24 17:19:34 2024 -0500
+
+    Hints added
+
+[33mcommit 42fa08e40b068a54f1ca3e8ba4d07f9d576f4901[m
+Merge: 4c09493 4b701fb
+Author: Pau-andre <143214825+Pau-andre@users.noreply.github.com>
+Date:   Wed Apr 17 21:09:06 2024 -0500
+
+    Merge branch 'main' of https://github.com/Valen-r-s/TechDreamer
+
+[33mcommit 4c0949382854dfc3063a8307f027d4622b565cec[m
+Author: Pau-andre <143214825+Pau-andre@users.noreply.github.com>
+Date:   Wed Apr 17 21:09:03 2024 -0500
+
+    alineacion boton pista
+
+[33mcommit 172075a6093016252be5cd57c837bf385c1c9cde[m
+Author: Pau-andre <143214825+Pau-andre@users.noreply.github.com>
+Date:   Wed Apr 17 21:04:50 2024 -0500
+
+    Update pistas.cs
+
+[33mcommit 4b701fb48a8cc8d8970249bd384074d24b880816[m
+Author: Valentina Restrepo <valentina.re.san@gmail.com>
+Date:   Wed Apr 17 21:01:34 2024 -0500
+
+    tips added
+
+[33mcommit 257b70efadddc5117e347662b5169865545376fe[m
+Author: Valentina Restrepo <valentina.re.san@gmail.com>
+Date:   Wed Apr 17 20:54:53 2024 -0500
+
+    improved questions feedback
+
+[33mcommit 9e23326d5fad55e610231b7dfe13f6acd486cc9f[m
+Author: Valentina Restrepo <valentina.re.san@gmail.com>
+Date:   Wed Apr 17 20:22:47 2024 -0500
+
+    Clue Button added
+
+[33mcommit 54584374aaca26da0fbff35fd2a8fb30004c5b6c[m
+Author: Valentina Restrepo <valentina.re.san@gmail.com>
+Date:   Wed Apr 17 19:02:19 2024 -0500
+
+    Loop y calidad corregidos
+
+[33mcommit 161c7d8606c9fde647810d65ca0865681f7eee99[m
+Merge: c80f4c5 17ebe81
+Author: Pau-andre <143214825+Pau-andre@users.noreply.github.com>
+Date:   Wed Apr 17 17:07:12 2024 -0500
+
+    Merge branch 'main' of https://github.com/Valen-r-s/TechDreamer
+
+[33mcommit c80f4c5dbc98493301f8b88e3bc6b958d48dfac4[m
+Author: Pau-andre <143214825+Pau-andre@users.noreply.github.com>
+Date:   Wed Apr 17 17:07:09 2024 -0500
+
+    Mejoras juego animación
+    
+    Se mejoro el código de verificación para que muestre con colores cuales imágenes están puestas correctamente, también se crea el botón de pistas y el script de este.
+
+[33mcommit 17ebe8116d0a6b36682791198d2b506248720342[m
+Author: Valentina Restrepo <valentina.re.san@gmail.com>
+Date:   Wed Apr 17 14:12:13 2024 -0500
+
+    commit
+
+[33mcommit 9b683ebb23b2b00a01e5b5c0211cc49507aff4bf[m
+Author: LiaLopez1 <natalialopezramirez@gmail.com>
+Date:   Thu Apr 11 14:50:19 2024 -0500
+
+    Correciones luz e invest
+    
+    Hice el cambio de escena por que las luces me las tire, e inicie mi jueguito.
+
+[33mcommit 285c88fe9517e0490dd4e7c40356899eb452f22e[m
+Author: LiaLopez1 <natalialopezramirez@gmail.com>
+Date:   Mon Apr 8 12:06:37 2024 -0500
+
+    RecolectarDocs
+
+[33mcommit 4f87c9f1eecd4416a53fb7ed8d94bac4f77ddb4d[m
+Author: LiaLopez1 <natalialopezramirez@gmail.com>
+Date:   Sat Apr 6 16:51:13 2024 -0500
+
+    arreglos juego INvestigacion
+
+[33mcommit 39134c49378259a9536fe0163a3018716a1bc609[m
+Author: LiaLopez1 <natalialopezramirez@gmail.com>
+Date:   Wed Apr 3 21:48:27 2024 -0500
+
+    correcciones
+
+[33mcommit 822560e77a22e7f58727746eeae3c47dabbe946e[m
+Author: LiaLopez1 <natalialopezramirez@gmail.com>
+Date:   Wed Apr 3 19:32:25 2024 -0500
+
+    Arrreglo deMov Amy
+    
+    Le cambie la forma en la que corre
+
+[33mcommit a8a4fc9c9eff7783ee3f27ed93e8aa59e0e26c1a[m
+Author: Pau-andre <143214825+Pau-andre@users.noreply.github.com>
+Date:   Sat Mar 30 11:54:03 2024 -0500
+
+    Cambio formato videos
+    
+    cambio a mp4 para prueba en web
+
+[33mcommit 99cb847a6b39b376f1ab2f0180fd213b48c64476[m
+Author: Valentina Restrepo <valentina.re.san@gmail.com>
+Date:   Wed Mar 27 04:50:26 2024 -0500
+
+    commit
+
+[33mcommit dd93a571d54b2510dda6a35c0f6430dbdc70978a[m
+Author: Valentina Restrepo <valentina.re.san@gmail.com>
+Date:   Tue Mar 26 15:45:01 2024 -0500
+
+    Button update
+
+[33mcommit 75d8384a8f8643a56091a2fb5744ec566ee56a12[m
+Author: Pau-andre <143214825+Pau-andre@users.noreply.github.com>
+Date:   Tue Mar 26 14:08:11 2024 -0500
+
+    Arreglo menu pausa
+    
+    Se arreglaron algunos bugs que pasaban con dos botones. También se cambio la imagen de la animadora en el box del dialogo.
+
+[33mcommit 3c2590e31d6a3b24855fcad2c7e0b1a30f619595[m
+Author: Pau-andre <143214825+Pau-andre@users.noreply.github.com>
+Date:   Tue Mar 26 12:23:47 2024 -0500
+
+    Update menuDiseño.unity
+    
+    dimensiones del fondo se adaptan a cualquier pantalla
+
+[33mcommit 7dbf3c549617a3a30187e526f4403874411a2d13[m
+Author: Pau-andre <143214825+Pau-andre@users.noreply.github.com>
+Date:   Tue Mar 26 12:08:36 2024 -0500
+
+    Mejoras juego animación
+    
+    Se añadio videos, score y menu de pausa. Se arreglo el responsive de las pantallas, para que funcione en cualquier pantalla.
+
+[33mcommit 8565402d66f2188ba05a81d5be8e724c9c490b7e[m
+Author: Valentina Restrepo <valentina.re.san@gmail.com>
+Date:   Sat Mar 23 11:45:51 2024 -0500
+
+    Pause menu added
+
+[33mcommit 9c506c607e3c884615cff8f52c5aee8ce63fb45d[m
+Author: Valentina Restrepo <valentina.re.san@gmail.com>
+Date:   Sat Mar 23 09:27:04 2024 -0500
+
+    Project files
+
+[33mcommit b4606354afd03a51c1f6664370196819689c41c9[m
+Author: Valentina Restrepo <valentina.re.san@gmail.com>
+Date:   Sat Mar 23 09:20:18 2024 -0500
+
+    Initial commit
+[33mcommit 4b6fd058aa5ad7305721f0084ccdda4536fc9fa2[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 2011b33 274d742
+Author: LiaLopez1 <natalialopezramirez@gmail.com>
+Date:   Wed Apr 24 23:07:12 2024 -0500
+
+    ee no se
+
+[33mcommit 2011b339c64d72ba732e599a8262d34659b68c84[m
+Author: LiaLopez1 <natalialopezramirez@gmail.com>
+Date:   Wed Apr 24 23:03:06 2024 -0500
+
+    Arreglos de interfaz
+    
+    Indicador de objetos y camara.
+
+[33mcommit 274d742e51c96cdf383c38a560cfb1211ec88edd[m
+Author: Valentina Restrepo <valentina.re.san@gmail.com>
+Date:   Wed Apr 24 21:59:40 2024 -0500
+
+    ajustes
+
+[33mcommit dcf25d3a6547926c2ce216d2f402afd1e43bf55e[m
+Author: Juandejdoc <est.juand.orozco@unimilitar.edu.co>
+Date:   Wed Apr 24 18:40:21 2024 -0500
+
+    actualizacion juego porgramacion
+
+[33mcommit b849731e1bde1660a51e9b8668eac6486485c279[m
+Author: Juandejdoc <est.juand.orozco@unimilitar.edu.co>
+Date:   Wed Apr 24 18:37:29 2024 -0500
+
+    actualice los paneles
+
+[33mcommit 5ff5ad44d95090269a93be47b0bed81767a13ff2[m
+Author: Juandejdoc <est.juand.orozco@unimilitar.edu.co>
+Date:   Wed Apr 24 18:34:43 2024 -0500
+
+    subi el prefab
+
+[33mcommit 45e06a9a709c75e01cdf47c908d4c949229ff99a[m
+Author: Juandejdoc <est.juand.orozco@unimilitar.edu.co>
+Date:   Wed Apr 24 18:29:46 2024 -0500
+
+    agrege juego programacion
+
+[33mcommit a18970936084765a1d4395094707e8382f67eb53[m
+Author: Valentina Restrepo <valentina.re.san@gmail.com>
+Date:   Wed Apr 24 17:19:34 2024 -0500
+
+    Hints added
+
+[33mcommit 42fa08e40b068a54f1ca3e8ba4d07f9d576f4901[m
+Merge: 4c09493 4b701fb
+Author: Pau-andre <143214825+Pau-andre@users.noreply.github.com>
+Date:   Wed Apr 17 21:09:06 2024 -0500
+
+    Merge branch 'main' of https://github.com/Valen-r-s/TechDreamer
+
+[33mcommit 4c0949382854dfc3063a8307f027d4622b565cec[m
+Author: Pau-andre <143214825+Pau-andre@users.noreply.github.com>
+Date:   Wed Apr 17 21:09:03 2024 -0500
+
+    alineacion boton pista
+
+[33mcommit 172075a6093016252be5cd57c837bf385c1c9cde[m
+Author: Pau-andre <143214825+Pau-andre@users.noreply.github.com>
+Date:   Wed Apr 17 21:04:50 2024 -0500
+
+    Update pistas.cs
+
+[33mcommit 4b701fb48a8cc8d8970249bd384074d24b880816[m
+Author: Valentina Restrepo <valentina.re.san@gmail.com>
+Date:   Wed Apr 17 21:01:34 2024 -0500
+
+    tips added
+
+[33mcommit 257b70efadddc5117e347662b5169865545376fe[m
+Author: Valentina Restrepo <valentina.re.san@gmail.com>
+Date:   Wed Apr 17 20:54:53 2024 -0500
+
+    improved questions feedback
+
+[33mcommit 9e23326d5fad55e610231b7dfe13f6acd486cc9f[m
+Author: Valentina Restrepo <valentina.re.san@gmail.com>
+Date:   Wed Apr 17 20:22:47 2024 -0500
+
+    Clue Button added
+
+[33mcommit 54584374aaca26da0fbff35fd2a8fb30004c5b6c[m
+Author: Valentina Restrepo <valentina.re.san@gmail.com>
+Date:   Wed Apr 17 19:02:19 2024 -0500
+
+    Loop y calidad corregidos
+
+[33mcommit 161c7d8606c9fde647810d65ca0865681f7eee99[m
+Merge: c80f4c5 17ebe81
+Author: Pau-andre <143214825+Pau-andre@users.noreply.github.com>
+Date:   Wed Apr 17 17:07:12 2024 -0500
+
+    Merge branch 'main' of https://github.com/Valen-r-s/TechDreamer
+
+[33mcommit c80f4c5dbc98493301f8b88e3bc6b958d48dfac4[m
+Author: Pau-andre <143214825+Pau-andre@users.noreply.github.com>
+Date:   Wed Apr 17 17:07:09 2024 -0500
+
+    Mejoras juego animación
+    
+    Se mejoro el código de verificación para que muestre con colores cuales imágenes están puestas correctamente, también se crea el botón de pistas y el script de este.
+
+[33mcommit 17ebe8116d0a6b36682791198d2b506248720342[m
+Author: Valentina Restrepo <valentina.re.san@gmail.com>
+Date:   Wed Apr 17 14:12:13 2024 -0500
+
+    commit
+
+[33mcommit 9b683ebb23b2b00a01e5b5c0211cc49507aff4bf[m
+Author: LiaLopez1 <natalialopezramirez@gmail.com>
+Date:   Thu Apr 11 14:50:19 2024 -0500
+
+    Correciones luz e invest
+    
+    Hice el cambio de escena por que las luces me las tire, e inicie mi jueguito.
+
+[33mcommit 285c88fe9517e0490dd4e7c40356899eb452f22e[m
+Author: LiaLopez1 <natalialopezramirez@gmail.com>
+Date:   Mon Apr 8 12:06:37 2024 -0500
+
+    RecolectarDocs
+
+[33mcommit 4f87c9f1eecd4416a53fb7ed8d94bac4f77ddb4d[m
+Author: LiaLopez1 <natalialopezramirez@gmail.com>
+Date:   Sat Apr 6 16:51:13 2024 -0500
+
+    arreglos juego INvestigacion
+
+[33mcommit 39134c49378259a9536fe0163a3018716a1bc609[m
+Author: LiaLopez1 <natalialopezramirez@gmail.com>
+Date:   Wed Apr 3 21:48:27 2024 -0500
+
+    correcciones
+
+[33mcommit 822560e77a22e7f58727746eeae3c47dabbe946e[m
+Author: LiaLopez1 <natalialopezramirez@gmail.com>
+Date:   Wed Apr 3 19:32:25 2024 -0500
+
+    Arrreglo deMov Amy
+    
+    Le cambie la forma en la que corre
+
+[33mcommit a8a4fc9c9eff7783ee3f27ed93e8aa59e0e26c1a[m
+Author: Pau-andre <143214825+Pau-andre@users.noreply.github.com>
+Date:   Sat Mar 30 11:54:03 2024 -0500
+
+    Cambio formato videos
+    
+    cambio a mp4 para prueba en web
+
+[33mcommit 99cb847a6b39b376f1ab2f0180fd213b48c64476[m
+Author: Valentina Restrepo <valentina.re.san@gmail.com>
+Date:   Wed Mar 27 04:50:26 2024 -0500
+
+    commit
+
+[33mcommit dd93a571d54b2510dda6a35c0f6430dbdc70978a[m
+Author: Valentina Restrepo <valentina.re.san@gmail.com>
+Date:   Tue Mar 26 15:45:01 2024 -0500
+
+    Button update
+
+[33mcommit 75d8384a8f8643a56091a2fb5744ec566ee56a12[m
+Author: Pau-andre <143214825+Pau-andre@users.noreply.github.com>
+Date:   Tue Mar 26 14:08:11 2024 -0500
+
+    Arreglo menu pausa
+    
+    Se arreglaron algunos bugs que pasaban con dos botones. También se cambio la imagen de la animadora en el box del dialogo.
+
+[33mcommit 3c2590e31d6a3b24855fcad2c7e0b1a30f619595[m
+Author: Pau-andre <143214825+Pau-andre@users.noreply.github.com>
+Date:   Tue Mar 26 12:23:47 2024 -0500
+
+    Update menuDiseño.unity
+    
+    dimensiones del fondo se adaptan a cualquier pantalla
+
+[33mcommit 7dbf3c549617a3a30187e526f4403874411a2d13[m
+Author: Pau-andre <143214825+Pau-andre@users.noreply.github.com>
+Date:   Tue Mar 26 12:08:36 2024 -0500
+
+    Mejoras juego animación
+    
+    Se añadio videos, score y menu de pausa. Se arreglo el responsive de las pantallas, para que funcione en cualquier pantalla.
+
+[33mcommit 8565402d66f2188ba05a81d5be8e724c9c490b7e[m
+Author: Valentina Restrepo <valentina.re.san@gmail.com>
+Date:   Sat Mar 23 11:45:51 2024 -0500
+
+    Pause menu added
+
+[33mcommit 9c506c607e3c884615cff8f52c5aee8ce63fb45d[m
+Author: Valentina Restrepo <valentina.re.san@gmail.com>
+Date:   Sat Mar 23 09:27:04 2024 -0500
+
+    Project files
+
+[33mcommit b4606354afd03a51c1f6664370196819689c41c9[m
+Author: Valentina Restrepo <valentina.re.san@gmail.com>
+Date:   Sat Mar 23 09:20:18 2024 -0500
+
+    Initial commit
