@@ -45,6 +45,9 @@ EditorBuildSettings:
     path: Assets/Scenes/menuprogra.unity
     guid: 91542eea72d8a4ad18098bcd8bed8594
   - enabled: 1
+    path: Assets/Scenes/PGame/fondo espacial.unity
+    guid: d071dbbc9a15bdc4f8a48be69996f20e
+  - enabled: 1
     path: Assets/Scenes/menuInvestigacion.unity
     guid: ea58a58062da4ab46b46ee8e39068c57
   - enabled: 1
