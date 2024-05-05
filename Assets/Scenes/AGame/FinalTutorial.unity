@@ -182,6 +182,7 @@ GameObject:
   - component: {fileID: 681022231}
   - component: {fileID: 681022230}
   - component: {fileID: 681022229}
+  - component: {fileID: 681022234}
   m_Layer: 0
   m_Name: video
   m_TagString: Untagged
@@ -217,7 +218,7 @@ VideoPlayer:
   m_EnabledAudioTracks: 
   m_DirectAudioMutes: 
   m_ControlledAudioTrackCount: 0
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 1
   m_WaitForFirstFrame: 1
@@ -310,6 +311,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 360, y: 180, z: 0}
+--- !u!114 &681022234
+MonoBehaviour:
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681022228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31ebb5d373127466e9729b49f971c58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &767652006
 GameObject:
   m_ObjectHideFlags: 0
