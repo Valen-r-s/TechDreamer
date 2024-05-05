@@ -313,6 +313,8 @@ Transform:
   m_LocalEulerAnglesHint: {x: 360, y: 180, z: 0}
 --- !u!114 &681022234
 MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 681022228}
