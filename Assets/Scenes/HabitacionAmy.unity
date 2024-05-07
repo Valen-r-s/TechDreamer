@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 97ef34457ed614d449f75eafe2fb01a8, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -1036,7 +1036,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!108 &705507994
 Light:
@@ -1089,7 +1089,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -2078,6 +2078,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8505775104406334017, guid: 56b011a76a22de047a86d607f74c7bb1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8505775104406334017, guid: 56b011a76a22de047a86d607f74c7bb1, type: 3}
       propertyPath: m_Intensity
       value: 2.75
       objectReference: {fileID: 0}
@@ -2161,6 +2165,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 5.29
       objectReference: {fileID: 0}
+    - target: {fileID: -3585819434959093396, guid: 56b011a76a22de047a86d607f74c7bb1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -3451349193848589239, guid: 56b011a76a22de047a86d607f74c7bb1, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5165
@@ -2197,6 +2205,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 42c93dd0125e0c642b8fe299219831a8, type: 2}
+    - target: {fileID: -2877028824350784435, guid: 56b011a76a22de047a86d607f74c7bb1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2549361309190518306, guid: 56b011a76a22de047a86d607f74c7bb1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -2155678428853351823, guid: 56b011a76a22de047a86d607f74c7bb1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.798
@@ -2241,6 +2257,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: cc89958c091d2864985147004de37c18, type: 2}
+    - target: {fileID: 435926223159981834, guid: 56b011a76a22de047a86d607f74c7bb1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 919132149155446097, guid: 56b011a76a22de047a86d607f74c7bb1, type: 3}
       propertyPath: m_Name
       value: HabitacionAmy
@@ -2289,6 +2309,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: e84f0916cf7e1c34586076e6e6592824, type: 2}
+    - target: {fileID: 3847021233166600797, guid: 56b011a76a22de047a86d607f74c7bb1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6931705468504604762, guid: 56b011a76a22de047a86d607f74c7bb1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -4034,6 +4058,10 @@ PrefabInstance:
       value: Amy
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 81ed3d4e83f7dc441a2699bfade0f2be, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 81ed3d4e83f7dc441a2699bfade0f2be, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -4432,8 +4460,8 @@ SceneRoots:
   - {fileID: 1335101946}
   - {fileID: 2138509513}
   - {fileID: 965500050}
-  - {fileID: 734264218}
   - {fileID: 1055229731}
+  - {fileID: 734264218}
   - {fileID: 945808417}
   - {fileID: 1472641739}
   - {fileID: 1473045017}
