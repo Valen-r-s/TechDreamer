@@ -1,34 +1,35 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour
 {
-    public GameObject gameOverPanel;  // Arrastra aquí el panel de Game Over desde el Inspector
+    public GameObject gameOverPanel;  // Referencia al panel de Game Over en la UI
 
     void Start()
     {
-        gameOverPanel.SetActive(false);  // Oculta el panel de Game Over al inicio
+        // Asegúrate de que el panel de Game Over está desactivado al iniciar el juego
+        if (gameOverPanel != null)
+            gameOverPanel.SetActive(false);
+        else
+            Debug.LogError("GameOverPanel is not assigned in the Inspector!");
     }
 
-
+    // Función para mostrar el panel de Game Over
     public void ShowGameOver()
     {
+        Debug.Log("Showing Game Over Panel");
         if (gameOverPanel != null)
-        {
-            gameOverPanel.SetActive(true);
-            Debug.Log("Game Over Panel Activated");
-        }
+            gameOverPanel.SetActive(true);  // Activa el panel de Game Over
         else
-        {
-            Debug.LogError("Game Over Panel is not assigned in the Inspector!");
-        }
+            Debug.LogError("GameOverPanel is not assigned in the Inspector!");
     }
 
-
-
+    // Opcionalmente, puedes agregar un método para reiniciar el juego
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);  // Recarga la escena actual para reiniciar el juego
+        Debug.Log("Restarting Game");
+        // Aquí puedes agregar la lógica para reiniciar el juego, típicamente recargando la escena
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 }
+
 

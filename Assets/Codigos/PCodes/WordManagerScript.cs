@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+using TMPro;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 public class WordManagerScript : MonoBehaviour
@@ -40,7 +39,6 @@ public class WordManagerScript : MonoBehaviour
         MoveWords();
         UpdateClosestWord();
         UpdateCharacterSprite();
-        UpdateWordVisibility();  // Added to update the visibility of the words
     }
 
     void UpdateCharacterSprite()
@@ -98,10 +96,10 @@ public class WordManagerScript : MonoBehaviour
                 characterSpriteRenderer.sprite = hurtSprite;
                 toRemove.Add(wordObject);
                 collisionCount++;
-                Debug.Log("Collision Count: " + collisionCount); // Rastrear el contador de colisiones
+                Debug.Log("Collision Count: " + collisionCount);
                 if (collisionCount >= maxCollisions)
                 {
-                    Debug.Log("Game Over triggered"); // Confirmar que Game Over se activa
+                    Debug.Log("Game Over triggered");
                     GameOver();
                 }
                 redColorTimer = redColorDuration;
@@ -116,24 +114,11 @@ public class WordManagerScript : MonoBehaviour
         }
     }
 
-
-    // Aquí podrías añadir más lógica de finalización, como detener el juego, etc.
     void GameOver()
     {
-        Debug.Log("GameOver function called");  // Confirmar que se llama a esta función
-        GameOverManager gameOverManager = FindObjectOfType<GameOverManager>();
-        if (gameOverManager != null)
-        {
-            gameOverManager.ShowGameOver();
-        }
-        else
-        {
-            Debug.LogError("GameOverManager not found in the scene!");
-        }
+        Debug.Log("GameOver function called");
+        FindObjectOfType<GameOverManager>().ShowGameOver();
     }
-
-
-
 
     void UpdateClosestWord()
     {
@@ -205,23 +190,4 @@ public class WordManagerScript : MonoBehaviour
         TextMeshPro textMeshPro = wordObject.GetComponent<TextMeshPro>();
         textMeshPro.text = randomWord;
     }
-
-    void UpdateWordVisibility()
-    {
-        // Manual coordinates from the provided sprite configuration
-        float minX = 199.6386f - (527.999f / 2);
-        float maxX = 199.6386f + (527.999f / 2);
-        float minY = -2.4297f - (567.64f / 2);
-        float maxY = -2.4297f + (567.64f / 2);
-
-        foreach (GameObject wordObject in wordObjects)
-        {
-            Vector3 wordPos = wordObject.transform.position;
-            TextMeshPro textMesh = wordObject.GetComponent<TextMeshPro>();
-            bool isVisible = (wordPos.x >= minX && wordPos.x <= maxX &&
-                              wordPos.y >= minY && wordPos.y <= maxY);
-            textMesh.enabled = isVisible;
-        }
-    }
 }
-
