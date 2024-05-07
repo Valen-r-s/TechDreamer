@@ -82,9 +82,8 @@ public class dDialogo : MonoBehaviour
 
     void EndDialog()
     {
-        gameObject.SetActive(false); // O quiz?s desees desactivar solo el panel de di?logo en lugar de todo el gameObject si es m?s apropiado.
-                                     // Aqu? puedes agregar cualquier otra l?gica de limpieza o de transici?n que necesites.
-    }
+        gameObject.SetActive(false);
+    }                              
 
     void mostrarContinuar(bool mostrar)
     {
