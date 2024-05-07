@@ -45,13 +45,22 @@ public class QuizManager : MonoBehaviour
     public void Correct(string explanation)
     {
         ExplanationText.text = explanation;
-        NextQuestionButton.gameObject.SetActive(true); 
+        NextQuestionButton.gameObject.SetActive(true);
+        DisableAllOptions();
     }
 
     public void Wrong(string explanation)
     {
         ExplanationText.text = explanation;
-        NextQuestionButton.gameObject.SetActive(true); 
+        NextQuestionButton.gameObject.SetActive(true);
+        DisableAllOptions();
+    }
+    void DisableAllOptions()
+    {
+        foreach (GameObject option in options)
+        {
+            option.GetComponent<Button>().interactable = false;
+        }
     }
 
     public void OnNextQuestionButtonPressed()
@@ -82,6 +91,8 @@ public class QuizManager : MonoBehaviour
             {
                 options[i].GetComponent<dAnswerScript>().isCorrect = true;
             }
+            // Re-enable the button component on each option
+            options[i].GetComponent<Button>().interactable = true;
         }
     }
 
