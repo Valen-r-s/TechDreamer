@@ -28,10 +28,19 @@ public class GQuizManager : MonoBehaviour
     public GameObject hintPanel;
     public TextMeshProUGUI HintText;
 
+    public GameObject MedalsPanel;
+    public Image Images1; 
+    public Image Images2;  
+    public Image Images3; 
+    public Sprite bronzeMedal;
+    public Sprite silverMedal;
+    public Sprite goldMedal;
+
     private void Start()
     {
         totalQuestions = QnA.Count;
         GoPanel.SetActive(false);
+        MedalsPanel.SetActive(false);
         nextQ.gameObject.SetActive(false);
         generateQuestion();
     }
@@ -40,32 +49,63 @@ public class GQuizManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
     void GameOver()
     {
         QuizPanel.SetActive(false);
         DialogoPanel.SetActive(false);
         GoPanel.SetActive(true);
+        MedalsPanel.SetActive(true);  // Mostrar el panel de medallas
         pause.gameObject.SetActive(false);
         PistaButton.gameObject.SetActive(false);
         nextQ.gameObject.SetActive(false);
         ScoreTxt.text = totalScore + "/" + totalQuestions;
+
+        // Lógica para asignar medallas basadas en el puntaje
+        if (totalScore == 9)
+        {
+            Images3.sprite = goldMedal;
+            Images2.sprite = silverMedal;
+            Images1.sprite = bronzeMedal;
+        }
+        else if (totalScore >= 5)
+        {
+            Images2.sprite = silverMedal;
+            Images1.sprite = bronzeMedal;
+        }
+        else if (totalScore >= 1)
+        {
+            Images1.sprite = bronzeMedal;
+        }
     }
 
     public void Correct(string explanation)
     {
         totalScore += 1;
         ExplanationText.text = explanation;
+        PistaButton.gameObject.SetActive(false);
         nextQ.gameObject.SetActive(true);
+        DisableAllOptions();
     }
 
     public void Wrong(string explanation)
     {
         ExplanationText.text = explanation;
+        PistaButton.gameObject.SetActive(false);
         nextQ.gameObject.SetActive(true);
+        DisableAllOptions();
+    }
+    void DisableAllOptions()
+    {
+        foreach (GameObject option in options)
+        {
+            option.GetComponent<Button>().interactable = false;
+        }
     }
 
     public void OnNextQuestionButtonPressed()
     {
+        PistaButton.gameObject.SetActive(true);
         nextQ.gameObject.SetActive(false);
         ExplanationText.text = "";
         QnA.RemoveAt(currentQuestion);
@@ -93,6 +133,8 @@ public class GQuizManager : MonoBehaviour
             {
                 options[i].GetComponent<GanswerScript>().isCorrect = true;
             }
+            // Re-enable the button component on each option
+            options[i].GetComponent<Button>().interactable = true;
         }
     }
 
