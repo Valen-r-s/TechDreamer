@@ -29,6 +29,7 @@ public class MeshSubdivider : MonoBehaviour
         List<Vector3> newVertices = new List<Vector3>(oldVertices);
         List<int> newTriangles = new List<int>();
 
+        // Asignar nuevos vértices para cada arista solo una vez
         for (int i = 0; i < oldTriangles.Length; i += 3)
         {
             int currentTriangleIndex1 = oldTriangles[i];
@@ -39,27 +40,23 @@ public class MeshSubdivider : MonoBehaviour
             int b = GetNewVertex(currentTriangleIndex2, currentTriangleIndex3, newVertices, newVerticesMap);
             int c = GetNewVertex(currentTriangleIndex3, currentTriangleIndex1, newVertices, newVerticesMap);
 
-            // Adding four new triangles
-            newTriangles.Add(currentTriangleIndex1);
-            newTriangles.Add(a);
-            newTriangles.Add(c);
-
-            newTriangles.Add(currentTriangleIndex2);
-            newTriangles.Add(b);
-            newTriangles.Add(a);
-
-            newTriangles.Add(currentTriangleIndex3);
-            newTriangles.Add(c);
-            newTriangles.Add(b);
-
-            newTriangles.Add(a);
-            newTriangles.Add(b);
-            newTriangles.Add(c);
+            // Agregar cuatro nuevos triángulos
+            AddTriangle(currentTriangleIndex1, a, c, newTriangles);
+            AddTriangle(currentTriangleIndex2, b, a, newTriangles);
+            AddTriangle(currentTriangleIndex3, c, b, newTriangles);
+            AddTriangle(a, b, c, newTriangles);
         }
 
         mesh.vertices = newVertices.ToArray();
         mesh.triangles = newTriangles.ToArray();
         mesh.RecalculateNormals();
+    }
+
+    void AddTriangle(int v1, int v2, int v3, List<int> triangles)
+    {
+        triangles.Add(v1);
+        triangles.Add(v2);
+        triangles.Add(v3);
     }
 
     int GetNewVertex(int index1, int index2, List<Vector3> newVertices, Dictionary<KeyValuePair<int, int>, int> newVerticesMap)
@@ -71,7 +68,7 @@ public class MeshSubdivider : MonoBehaviour
         }
         else
         {
-            Vector3 newVertex = (newVertices[index1] + newVertices[index2]) / 2f;
+            Vector3 newVertex = (newVertices[index1] + newVertices[index2]) / 2.0f;
             newVertices.Add(newVertex);
             int newIndex = newVertices.Count - 1;
             newVerticesMap.Add(edgeKey, newIndex);

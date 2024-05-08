@@ -1,59 +1,51 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public float panSpeed = 20f;
-    public float panBorderThickness = 10f;
-    public Vector2 panLimit;
-    public float scrollSpeed = 20f;
-    public float minY = 6.58f;
-    public float maxY = 7f;
+    public Transform target; // El objetivo al que la cámara debe mirar
+    public Vector3 offset; // Offset inicial de la cámara respecto al target
+    public float rotationSpeed = 100f; // Velocidad de rotación de la cámara
 
-    // Update is called once per frame
+    private Vector3 previousPosition;
+
+    void Start()
+    {
+        // Configura la posición inicial de la cámara usando el offset
+        transform.position = target.position + offset;
+        transform.LookAt(target);
+    }
+
     void Update()
     {
-        Vector3 pos = transform.position;
-
-        if (Input.GetKey("w") || Input.mousePosition.y >= Screen.height - panBorderThickness)
+        if (Input.GetMouseButtonDown(1)) // Right mouse button
         {
-            pos.z += panSpeed * Time.deltaTime;
-        }
-        if (Input.GetKey("s") || Input.mousePosition.y <= panBorderThickness)
-        {
-            pos.z -= panSpeed * Time.deltaTime;
-        }
-        if (Input.GetKey("d") || Input.mousePosition.x >= Screen.width - panBorderThickness)
-        {
-            pos.x += panSpeed * Time.deltaTime;
-        }
-        if (Input.GetKey("a") || Input.mousePosition.x <= panBorderThickness)
-        {
-            pos.x -= panSpeed * Time.deltaTime;
+            previousPosition = Input.mousePosition;
         }
 
-        float scroll = Input.GetAxis("Mouse ScrollWheel");
-        pos.y -= scroll * scrollSpeed * 100f * Time.deltaTime;
+        if (Input.GetMouseButton(1))
+        {
+            Vector3 delta = Input.mousePosition - previousPosition;
+            previousPosition = Input.mousePosition;
 
-        pos.x = Mathf.Clamp(pos.x, -panLimit.x, panLimit.x);
-        pos.y = Mathf.Clamp(pos.y, minY, maxY);
-        pos.z = Mathf.Clamp(pos.z, -panLimit.y, panLimit.y);
+            float angleX = delta.x * rotationSpeed * Time.deltaTime; // Invertido
+            float angleY = -delta.y * rotationSpeed * Time.deltaTime; // Invertido
 
-        transform.position = pos;
+            // Realiza la rotación alrededor del target
+            RotateCamera(angleX, angleY);
+
+            // Mantén la cámara en la esfera definida por el offset alrededor del target
+            Vector3 desiredPosition = target.position + offset;
+            transform.position = target.position + (transform.position - target.position).normalized * offset.magnitude;
+        }
     }
 
-    public float rotationSpeed = 100f;
-    private void LateUpdate()
+    private void RotateCamera(float angleX, float angleY)
     {
-        if (Input.GetMouseButton(1)) // Right mouse button
-        {
-            float rotationX = Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime;
-            float rotationY = Input.GetAxis("Mouse Y") * rotationSpeed * Time.deltaTime;
+        // Realiza la rotación alrededor del target
+        transform.RotateAround(target.position, Vector3.up, angleX);
+        transform.RotateAround(target.position, transform.right, angleY);
 
-            transform.RotateAround(transform.position, Vector3.up, -rotationX);
-            transform.RotateAround(transform.position, transform.right, rotationY);
-        }
+        // Asegúrate de que la cámara mire al target después de la rotación
+        transform.LookAt(target);
     }
-
 }

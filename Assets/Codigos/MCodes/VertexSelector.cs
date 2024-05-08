@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(MeshFilter), typeof(MeshCollider))]
 public class VertexSelector : MonoBehaviour
 {
-    public Camera mainCamera;
+    public Camera editingCamera;
     public GameObject vertexMarkerPrefab; // Prefab para el marcador de vértice
     private GameObject preselectMarker; // Marcador para el vértice preseleccionado
     private GameObject selectMarker; // Marcador para el vértice seleccionado
@@ -28,7 +28,7 @@ public class VertexSelector : MonoBehaviour
 
     void Update()
     {
-        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+        Ray ray = editingCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit[] hits = Physics.RaycastAll(ray);
         float closestDistance = Mathf.Infinity;
         int closestVertexIndex = -1;
@@ -40,7 +40,7 @@ public class VertexSelector : MonoBehaviour
             {
                 Vector3 hitPoint = hit.point;
                 int vertexIndex = FindClosestVertexIndex(hitPoint);
-                float distance = Vector3.Distance(mainCamera.transform.position, hitPoint);
+                float distance = Vector3.Distance(editingCamera.transform.position, hitPoint);
 
                 if (distance < closestDistance)
                 {
@@ -77,7 +77,7 @@ public class VertexSelector : MonoBehaviour
         if (vertexSelected && Input.GetMouseButton(0))
         {
             Vector3 currentMousePosition = Input.mousePosition;
-            Vector3 newPosition = Camera.main.ScreenToWorldPoint(new Vector3(currentMousePosition.x, currentMousePosition.y, Camera.main.WorldToScreenPoint(initialVertexPosition).z));
+            Vector3 newPosition = editingCamera.ScreenToWorldPoint(new Vector3(currentMousePosition.x, currentMousePosition.y, editingCamera.WorldToScreenPoint(initialVertexPosition).z));
             MoveSelectedVertex(newPosition);
         }
 
@@ -85,11 +85,12 @@ public class VertexSelector : MonoBehaviour
         {
             if (vertexSelected)
             {
-                RemoveSelectMarker(); // Asegúrese de eliminar el marcador de selección al finalizar el movimiento
+                RemoveSelectMarker();
                 vertexSelected = false;
             }
         }
     }
+
 
     void UpdatePreselectMarker(Vector3 position)
     {
