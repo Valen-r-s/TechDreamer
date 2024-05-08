@@ -640,8 +640,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Cambioescena, Assembly-CSharp
+      - m_Target: {fileID: 1180049454}
+        m_TargetAssemblyTypeName: pauseMenu, Assembly-CSharp
         m_MethodName: Cambiaresc
         m_Mode: 3
         m_Arguments:
