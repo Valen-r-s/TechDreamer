@@ -1,35 +1,47 @@
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using System.Text.RegularExpressions;
 
 public class WordManagerScript : MonoBehaviour
 {
-    public List<string> words;
-    public GameObject wordPrefab;
-    public Transform spawnPoint;
-    public float speed = 5f;
-    private Vector3 targetPosition = new Vector3(2.95f, -4.12f, 0f);
-    public int collisionCount = 0;
-    public int maxCollisions = 3;
+    public List<string> words; // Lista de palabras a usar
+    public GameObject wordPrefab; // Prefab del objeto que representa la palabra
+    public Transform spawnPoint; // Punto de aparición de las palabras
+    public float speed = 5f; // Velocidad a la que se mueven las palabras
+    private Vector3 targetPosition = new Vector3(2.95f, -4.12f, 0f); // Posición objetivo hacia la que se mueven las palabras
 
-    private List<GameObject> wordObjects = new List<GameObject>();
-    private GameObject closestWordObject;
-    private string currentTypedWord = "";
+    private List<GameObject> wordObjects = new List<GameObject>(); // Lista de objetos de palabras en la escena
+    private GameObject closestWordObject; // Objeto de palabra más cercano
+    private string currentTypedWord = ""; // Palabra actualmente escrita por el jugador
 
-    private float redColorDuration = 1f;
-    private float redColorTimer = 0f;
-    private float hurtDuration = 1.0f;
-    private float hurtTimer = 0f;
+    private float redColorDuration = 1f; // Duración del color rojo en la palabra
+    private float redColorTimer = 0f; // Temporizador para el color rojo
+    private float hurtDuration = 1.0f; // Duración del estado "herido" del personaje
+    private float hurtTimer = 0f; // Temporizador para el estado "herido"
+    private int collisionCount = 0; // Contador de colisiones
 
-    public SpriteRenderer characterSpriteRenderer;
-    public Sprite normalSprite;
-    public Sprite hurtSprite;
+    public SpriteRenderer characterSpriteRenderer; // Renderizador del sprite del personaje
+    public Sprite normalSprite; // Sprite normal del personaje
+    public Sprite hurtSprite; // Sprite del personaje herido
 
     void Start()
     {
         words = new List<string> { "espacio", "nave", "estrella", "galaxia", "planeta" };
-        InvokeRepeating("SpawnWord", 0f, 2f);
+        ShuffleWords(); // Mezcla las palabras para variar el orden en cada juego
+        InvokeRepeating("SpawnWord", 0f, 2f); // Empieza a invocar la aparición de palabras
+    }
+
+    void ShuffleWords() // Función para mezclar las palabras
+    {
+        for (int i = 0; i < words.Count; i++)
+        {
+            string temp = words[i];
+            int randomIndex = Random.Range(i, words.Count);
+            words[i] = words[randomIndex];
+            words[randomIndex] = temp;
+        }
     }
 
     void Update()
@@ -39,46 +51,40 @@ public class WordManagerScript : MonoBehaviour
         MoveWords();
         UpdateClosestWord();
         UpdateCharacterSprite();
-    }
 
-    void UpdateCharacterSprite()
-    {
-        if (hurtTimer > 0)
+        if (collisionCount >= 3)
         {
-            hurtTimer -= Time.deltaTime;
-            if (hurtTimer <= 0)
-            {
-                characterSpriteRenderer.sprite = normalSprite;
-            }
+            PlayerPrefs.SetInt("NumeroDeColisiones", collisionCount);
+            PlayerPrefs.Save();
+            SceneManager.LoadScene("FinalScene");
+        }
+        else if (wordObjects.Count == 0 && words.Count == 0)
+        {
+            PlayerPrefs.SetInt("NumeroDeColisiones", collisionCount);
+            PlayerPrefs.Save();
+            SceneManager.LoadScene("puntaje");
         }
     }
 
-    void HandleInput()
+    void SpawnWord()
     {
-        if (Input.anyKeyDown)
+        if (words.Count > 0)
         {
-            foreach (KeyCode keyCode in System.Enum.GetValues(typeof(KeyCode)))
-            {
-                if (Input.GetKeyDown(keyCode) && keyCode >= KeyCode.A && keyCode <= KeyCode.Z)
-                {
-                    char keyChar = keyCode.ToString().ToLower()[0];
-                    currentTypedWord += keyChar;
-                    CheckTypedWord();
-                    break;
-                }
-            }
-        }
-    }
+            int randomIndex = Random.Range(0, words.Count);
+            string randomWord = words[randomIndex];
+            words.RemoveAt(randomIndex);
 
-    void UpdateWordColors()
-    {
-        if (redColorTimer > 0)
+            float randomX = Random.Range(-10f, 10f);
+            Vector3 spawnPosition = new Vector3(randomX, spawnPoint.position.y, spawnPoint.position.z);
+            GameObject wordObject = Instantiate(wordPrefab, spawnPosition, Quaternion.identity, transform);
+            wordObjects.Add(wordObject);
+
+            TextMeshPro textMeshPro = wordObject.GetComponent<TextMeshPro>();
+            textMeshPro.text = randomWord;
+        }
+        else
         {
-            redColorTimer -= Time.deltaTime;
-            if (redColorTimer <= 0)
-            {
-                ResetWordColors();
-            }
+            CancelInvoke("SpawnWord");
         }
     }
 
@@ -96,12 +102,6 @@ public class WordManagerScript : MonoBehaviour
                 characterSpriteRenderer.sprite = hurtSprite;
                 toRemove.Add(wordObject);
                 collisionCount++;
-                Debug.Log("Collision Count: " + collisionCount);
-                if (collisionCount >= maxCollisions)
-                {
-                    Debug.Log("Game Over triggered");
-                    GameOver();
-                }
                 redColorTimer = redColorDuration;
                 hurtTimer = hurtDuration;
             }
@@ -114,28 +114,20 @@ public class WordManagerScript : MonoBehaviour
         }
     }
 
-    void GameOver()
+    void HandleInput()
     {
-        Debug.Log("GameOver function called");
-        FindObjectOfType<GameOverManager>().ShowGameOver();
-    }
-
-    void UpdateClosestWord()
-    {
-        float lowestY = float.MaxValue;
-        GameObject lowestWordObject = null;
-
-        foreach (GameObject wordObject in wordObjects)
+        if (Input.anyKeyDown)
         {
-            float posY = wordObject.transform.position.y;
-            if (posY < lowestY)
+            foreach (KeyCode keyCode in System.Enum.GetValues(typeof(KeyCode)))
             {
-                lowestY = posY;
-                lowestWordObject = wordObject;
+                if (Input.GetKeyDown(keyCode) && keyCode >= KeyCode.A && keyCode <= KeyCode.Z)
+                {
+                    char keyChar = keyCode.ToString().ToLower()[0];
+                    currentTypedWord += keyChar;
+                    CheckTypedWord();
+                }
             }
         }
-
-        closestWordObject = lowestWordObject;
     }
 
     void CheckTypedWord()
@@ -169,6 +161,18 @@ public class WordManagerScript : MonoBehaviour
         }
     }
 
+    void UpdateWordColors()
+    {
+        if (redColorTimer > 0)
+        {
+            redColorTimer -= Time.deltaTime;
+            if (redColorTimer <= 0)
+            {
+                ResetWordColors();
+            }
+        }
+    }
+
     void ResetWordColors()
     {
         if (closestWordObject != null)
@@ -179,15 +183,33 @@ public class WordManagerScript : MonoBehaviour
         }
     }
 
-    void SpawnWord()
+    void UpdateClosestWord()
     {
-        string randomWord = words[Random.Range(0, words.Count)];
-        float randomX = Random.Range(-10f, 10f);
-        Vector3 spawnPosition = new Vector3(randomX, spawnPoint.position.y, spawnPoint.position.z);
-        GameObject wordObject = Instantiate(wordPrefab, spawnPosition, Quaternion.identity, transform);
-        wordObjects.Add(wordObject);
+        float lowestY = float.MaxValue;
+        GameObject lowestWordObject = null;
 
-        TextMeshPro textMeshPro = wordObject.GetComponent<TextMeshPro>();
-        textMeshPro.text = randomWord;
+        foreach (GameObject wordObject in wordObjects)
+        {
+            float posY = wordObject.transform.position.y;
+            if (posY < lowestY)
+            {
+                lowestY = posY;
+                lowestWordObject = wordObject;
+            }
+        }
+
+        closestWordObject = lowestWordObject;
+    }
+
+    void UpdateCharacterSprite()
+    {
+        if (hurtTimer > 0)
+        {
+            hurtTimer -= Time.deltaTime;
+            if (hurtTimer <= 0)
+            {
+                characterSpriteRenderer.sprite = normalSprite;
+            }
+        }
     }
 }
