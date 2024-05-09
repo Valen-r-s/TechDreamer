@@ -42,7 +42,7 @@ public class VertexSelector : MonoBehaviour
                 int vertexIndex = FindClosestVertexIndex(hitPoint);
                 float distance = Vector3.Distance(editingCamera.transform.position, hitPoint);
 
-                if (distance < closestDistance)
+                if (vertexIndex != -1 && distance < closestDistance)
                 {
                     closestDistance = distance;
                     closestVertexIndex = vertexIndex;
@@ -53,7 +53,7 @@ public class VertexSelector : MonoBehaviour
 
         if (hitDetected)
         {
-            if (!vertexSelected && closestVertexIndex != preselectedVertexIndex)
+            if (!vertexSelected && closestVertexIndex != preselectedVertexIndex && closestVertexIndex >= 0)
             {
                 UpdatePreselectMarker(transform.TransformPoint(vertices[closestVertexIndex]));
                 preselectedVertexIndex = closestVertexIndex;
@@ -91,7 +91,6 @@ public class VertexSelector : MonoBehaviour
         }
     }
 
-
     void UpdatePreselectMarker(Vector3 position)
     {
         if (preselectMarker == null)
@@ -107,12 +106,11 @@ public class VertexSelector : MonoBehaviour
 
     void UpdateSelectMarker(Vector3 position)
     {
-        // Eliminar el marcador de preselección si existe
         RemovePreselectMarker();
 
         if (selectMarker != null)
         {
-            Destroy(selectMarker); // Elimina el marcador de selección existente
+            Destroy(selectMarker);
         }
         selectMarker = Instantiate(vertexMarkerPrefab, position, Quaternion.identity);
         selectMarker.GetComponent<Renderer>().material.color = selectColor;
@@ -138,16 +136,15 @@ public class VertexSelector : MonoBehaviour
 
     void MoveSelectedVertex(Vector3 newPosition)
     {
+        if (selectedVertexIndex < 0 || selectedVertexIndex >= vertices.Length) return;
+
         Vector3 newPositionLocal = transform.InverseTransformPoint(newPosition);
         Vector3 originalVertexPosition = vertices[selectedVertexIndex];
 
-        // Encuentra la posición local original del vértice seleccionado para comparar con otros vértices
         Vector3 displacement = newPositionLocal - originalVertexPosition;
-
-        // Aplicar el desplazamiento a todos los vértices que comparten la misma posición original
         for (int i = 0; i < vertices.Length; i++)
         {
-            if (vertices[i] == originalVertexPosition) // Comparación directa puede ser problemática debido a la precisión de punto flotante
+            if (vertices[i] == originalVertexPosition)
             {
                 vertices[i] += displacement;
             }
@@ -156,15 +153,22 @@ public class VertexSelector : MonoBehaviour
         mesh.vertices = vertices;
         mesh.RecalculateBounds();
         mesh.RecalculateNormals();
+        UpdateMeshCollider();
 
-        // Actualiza la posición del marcador de selección
         if (selectMarker != null)
         {
             selectMarker.transform.position = newPosition;
         }
     }
 
+    void UpdateMeshCollider()
+    {
+        MeshCollider meshCollider = GetComponent<MeshCollider>();
+        meshCollider.sharedMesh = null; // Limpia la malla actual
+        meshCollider.sharedMesh = mesh; // Asigna la malla actualizada
+    }
 
+    public float selectionThreshold = 10.0f; // Ajusta este valor para encontrar el equilibrio adecuado
     int FindClosestVertexIndex(Vector3 hitPoint)
     {
         float closestDistanceSqr = Mathf.Infinity;
@@ -173,7 +177,7 @@ public class VertexSelector : MonoBehaviour
         {
             Vector3 worldPosVertex = transform.TransformPoint(vertices[i]);
             float distanceSqr = (worldPosVertex - hitPoint).sqrMagnitude;
-            if (distanceSqr < closestDistanceSqr)
+            if (distanceSqr < closestDistanceSqr && distanceSqr < selectionThreshold * selectionThreshold)
             {
                 closestDistanceSqr = distanceSqr;
                 closestIndex = i;
@@ -181,17 +185,12 @@ public class VertexSelector : MonoBehaviour
         }
         return closestIndex;
     }
+
     public void UpdateVertexPositions()
     {
         mesh = GetComponent<MeshFilter>().mesh; // Asegúrate de que esta línea obtiene la malla actualizada
         vertices = mesh.vertices; // Actualiza la lista de vértices con las nuevas posiciones
     }
 
-    public void ReloadMeshData()
-    {
-        mesh = GetComponent<MeshFilter>().mesh;
-        vertices = mesh.vertices;
-        // Asegúrate de que cualquier estado de selección también se actualice si es necesario
-    }
-
+    
 }

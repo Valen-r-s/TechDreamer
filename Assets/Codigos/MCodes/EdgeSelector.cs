@@ -113,19 +113,7 @@ public class EdgeSelector : MonoBehaviour
         float projectLength = Mathf.Clamp(Vector3.Dot(p - p1, lineDirection), 0f, lineLength);
         return p1 + lineDirection * projectLength;
     }
-    void UpdateEdgeMarker(Edge edge, Color color)
-    {
-        Vector3 startPos = transform.TransformPoint(vertices[edge.v1]);
-        Vector3 endPos = transform.TransformPoint(vertices[edge.v2]);
-
-        if (currentEdgeMarker != null) Destroy(currentEdgeMarker);
-
-        currentEdgeMarker = Instantiate(edgeMarkerPrefab, (startPos + endPos) / 2, Quaternion.identity);
-        currentEdgeMarker.transform.up = (endPos - startPos).normalized;
-        float length = Vector3.Distance(startPos, endPos);
-        currentEdgeMarker.transform.localScale = new Vector3(currentEdgeMarker.transform.localScale.x, length / 2, currentEdgeMarker.transform.localScale.z); // Asumiendo que el cilindro se extiende en Y
-        currentEdgeMarker.GetComponent<Renderer>().material.color = color;
-    }
+    
     private void MoveSelectedEdge()
     {
         Vector3 mouseDelta = new Vector3(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y")) * sensitivity;
@@ -135,12 +123,14 @@ public class EdgeSelector : MonoBehaviour
         if (plane.Raycast(ray, out float enter))
         {
             Vector3 hitPoint = ray.GetPoint(enter);
-            Vector3 movement = mainCamera.transform.TransformDirection(mouseDelta) * (hitPoint - mainCamera.transform.position).magnitude * 0.1f; // El factor 0.1f es ajustable.
+            Vector3 movement = mainCamera.transform.TransformDirection(mouseDelta) * (hitPoint - mainCamera.transform.position).magnitude * 0.1f;
 
             if (selectedEdge.HasValue)
             {
                 Edge edge = selectedEdge.Value;
                 ApplyMovementToEdge(edge, movement);
+                // Actualizar el marcador de arista después de mover la arista
+                UpdateEdgeMarker(edge, selectColor);
             }
 
             lastMousePosition = Input.mousePosition;
@@ -151,12 +141,9 @@ public class EdgeSelector : MonoBehaviour
     private void ApplyMovementToEdge(Edge edge, Vector3 movement)
     {
         Vector3 worldMovement = transform.TransformVector(movement);
-
-        // Busca la posición original de los vértices de la arista
         Vector3 originalPositionV1 = vertices[edge.v1];
         Vector3 originalPositionV2 = vertices[edge.v2];
 
-        // Aplicar el movimiento de forma coherente para evitar separar la malla
         for (int i = 0; i < vertices.Length; i++)
         {
             if (vertices[i] == originalPositionV1 || vertices[i] == originalPositionV2)
@@ -168,13 +155,31 @@ public class EdgeSelector : MonoBehaviour
         mesh.vertices = vertices;
         mesh.RecalculateBounds();
         mesh.RecalculateNormals();
-
-        if (currentEdgeMarker != null)
-        {
-            Vector3 newPosition = (transform.TransformPoint(vertices[edge.v1]) + transform.TransformPoint(vertices[edge.v2])) / 2;
-            currentEdgeMarker.transform.position = newPosition;
-        }
+        UpdateMeshCollider();
     }
+
+    void UpdateMeshCollider()
+    {
+        MeshCollider meshCollider = GetComponent<MeshCollider>();
+        meshCollider.sharedMesh = null;
+        meshCollider.sharedMesh = mesh;
+    }
+
+    void UpdateEdgeMarker(Edge edge, Color color)
+    {
+        Vector3 startPos = transform.TransformPoint(vertices[edge.v1]);
+        Vector3 endPos = transform.TransformPoint(vertices[edge.v2]);
+
+        if (currentEdgeMarker != null) Destroy(currentEdgeMarker);
+
+        currentEdgeMarker = Instantiate(edgeMarkerPrefab, (startPos + endPos) / 2, Quaternion.LookRotation(endPos - startPos));
+        currentEdgeMarker.transform.up = (endPos - startPos).normalized;
+        float length = Vector3.Distance(startPos, endPos);
+        currentEdgeMarker.transform.localScale = new Vector3(currentEdgeMarker.transform.localScale.x, length / 2, currentEdgeMarker.transform.localScale.z);
+        currentEdgeMarker.GetComponent<Renderer>().material.color = color;
+    }
+
+
     public void ReloadMeshData()
     {
         mesh = GetComponent<MeshFilter>().mesh;

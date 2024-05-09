@@ -20,18 +20,17 @@ public class ModeSwitcher : MonoBehaviour
         }
     }
 
-    private void Update()
+    public void ActivateVertexMode()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            if (vertexSelector != null) vertexSelector.enabled = true;
-            if (edgeSelector != null) edgeSelector.enabled = false;
-        }
-        else if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (vertexSelector != null) vertexSelector.enabled = false;
-            if (edgeSelector != null) edgeSelector.enabled = true;
-        }
+        if (vertexSelector != null) vertexSelector.enabled = true;
+        if (edgeSelector != null) edgeSelector.enabled = false;
     }
+
+    public void ActivateEdgeMode()
+    {
+        if (vertexSelector != null) vertexSelector.enabled = false;
+        if (edgeSelector != null) edgeSelector.enabled = true;
+    }
+
 }
 

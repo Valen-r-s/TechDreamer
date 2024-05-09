@@ -65,4 +65,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PGame/puntaje.unity
     guid: e61c6fb4e0834134ebbab1c02332697a
+  - enabled: 1
+    path: Assets/Scenes/menuModelado.unity
+    guid: 50b1e1a38bc7a5b4a98711e85d75c85f
+  - enabled: 1
+    path: Assets/Scenes/MGame/Cubo.unity
+    guid: aed505812ab37a64a8216da86f7fb762
   m_configObjects: {}

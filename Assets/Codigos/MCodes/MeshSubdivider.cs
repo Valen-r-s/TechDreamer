@@ -13,15 +13,7 @@ public class MeshSubdivider : MonoBehaviour
         mesh = GetComponent<MeshFilter>().mesh;
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            SubdivideMesh();
-        }
-    }
-
-    void SubdivideMesh()
+    public void SubdivideMesh()
     {
         Vector3[] oldVertices = mesh.vertices;
         int[] oldTriangles = mesh.triangles;
@@ -50,7 +42,20 @@ public class MeshSubdivider : MonoBehaviour
         mesh.vertices = newVertices.ToArray();
         mesh.triangles = newTriangles.ToArray();
         mesh.RecalculateNormals();
+        mesh.RecalculateBounds();
+        UpdateMeshCollider();
     }
+
+    private void UpdateMeshCollider()
+    {
+        MeshCollider meshCollider = GetComponent<MeshCollider>();
+        if (meshCollider)
+        {
+            meshCollider.sharedMesh = null;
+            meshCollider.sharedMesh = mesh;
+        }
+    }
+
 
     void AddTriangle(int v1, int v2, int v3, List<int> triangles)
     {
