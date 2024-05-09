@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ActivadorNotas : MonoBehaviour
@@ -9,52 +7,52 @@ public class ActivadorNotas : MonoBehaviour
     public GameObject CamaraVisual;
     public GameObject ObjEnEscena;
 
-    public bool activa;
+    private bool activa;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && activa == true)
+        if (Input.GetKeyDown(KeyCode.E) && activa)
         {
-            notaVisual.SetActive(true);
-            ObjetoVisual.SetActive(true);
-            CamaraVisual.SetActive(true);
-            ObjEnEscena.SetActive(false);
+            ActivarNota();
         }
-        if (Input.GetKeyDown(KeyCode.Escape) && activa == true)
+        if (Input.GetKeyDown(KeyCode.Return) && activa)
         {
-            notaVisual.SetActive(false);
-            ObjetoVisual.SetActive(false);
-            CamaraVisual.SetActive(false);
-            ObjEnEscena.SetActive(true);
+            DesactivarNota();
+            // Llama al controlador para avanzar a la siguiente nota
+            NoteManager.Instance.AvanzarNota();
         }
+    }
+
+    public void ActivarNota()
+    {
+        notaVisual.SetActive(true);
+        ObjetoVisual.SetActive(true);
+        CamaraVisual.SetActive(true);
+        ObjEnEscena.SetActive(false);
+    }
+
+    public void DesactivarNota()
+    {
+        notaVisual.SetActive(false);
+        ObjetoVisual.SetActive(false);
+        CamaraVisual.SetActive(false);
+        ObjEnEscena.SetActive(true);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
-            activa = true;          
+            activa = true;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
             activa = false;
-            notaVisual.SetActive(false);
-            ObjetoVisual.SetActive(false);
-            CamaraVisual.SetActive(false);
-            ObjEnEscena.SetActive(true);
+            DesactivarNota();
         }
     }
-
 }
