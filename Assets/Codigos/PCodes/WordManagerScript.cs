@@ -11,6 +11,7 @@ public class WordManagerScript : MonoBehaviour
     public Transform spawnPoint; // Punto de aparición de las palabras
     public float speed = 5f; // Velocidad a la que se mueven las palabras
     private Vector3 targetPosition = new Vector3(2.95f, -4.12f, 0f); // Posición objetivo hacia la que se mueven las palabras
+    public TextMeshPro paragraphText; // Texto del párrafo donde las palabras se vuelven visibles
 
     private List<GameObject> wordObjects = new List<GameObject>(); // Lista de objetos de palabras en la escena
     private GameObject closestWordObject; // Objeto de palabra más cercano
@@ -28,12 +29,47 @@ public class WordManagerScript : MonoBehaviour
 
     void Start()
     {
-        words = new List<string> { "espacio", "nave", "estrella", "galaxia", "planeta" };
-        ShuffleWords(); // Mezcla las palabras para variar el orden en cada juego
-        InvokeRepeating("SpawnWord", 0f, 2f); // Empieza a invocar la aparición de palabras
+        words = new List<string> { "def", "suma", "return", "input", "int", "print", "for", "in", "range", "len", "list", "append", "if", "else" };
+        string allText = @"def suma(a, b):
+    return a + b
+
+# Lista para almacenar resultados de sumas
+resultados = []
+
+# Usando input para obtener valores
+a = int(input(""Ingrese el primer número: ""))
+b = int(input(""Ingrese el segundo número: ""))
+
+# Llamada a la función suma
+resultado = suma(a, b)
+resultados.append(resultado)
+
+# Uso de for, in, range y print para mostrar resultados
+for i in range(len(resultados)):
+    print(f""Resultado {i+1}: {resultados[i]}"")
+    
+# Condicionales para verificar el total
+total = sum(resultados)
+if total > 100:
+    print(""El total supera 100"")
+else:
+    print(""El total es menor o igual a 100"")";
+
+        // Ocultar las palabras clave inicialmente
+        foreach (string word in words)
+        {
+            allText = Regex.Replace(allText, @"\b" + Regex.Escape(word) + @"\b", "<color=#00000000>" + word + "</color>");
+        }
+
+        paragraphText.text = allText;
+        ShuffleWords();
+        InvokeRepeating("SpawnWord", 0f, 1.5f);
     }
 
-    void ShuffleWords() // Función para mezclar las palabras
+
+
+
+    void ShuffleWords()
     {
         for (int i = 0; i < words.Count; i++)
         {
@@ -54,14 +90,10 @@ public class WordManagerScript : MonoBehaviour
 
         if (collisionCount >= 3)
         {
-            PlayerPrefs.SetInt("NumeroDeColisiones", collisionCount);
-            PlayerPrefs.Save();
             SceneManager.LoadScene("FinalScene");
         }
         else if (wordObjects.Count == 0 && words.Count == 0)
         {
-            PlayerPrefs.SetInt("NumeroDeColisiones", collisionCount);
-            PlayerPrefs.Save();
             SceneManager.LoadScene("puntaje");
         }
     }
@@ -90,8 +122,6 @@ public class WordManagerScript : MonoBehaviour
 
     void MoveWords()
     {
-        List<GameObject> toRemove = new List<GameObject>();
-
         foreach (GameObject wordObject in wordObjects)
         {
             Vector3 directionToTarget = (targetPosition - wordObject.transform.position).normalized;
@@ -99,18 +129,12 @@ public class WordManagerScript : MonoBehaviour
 
             if (Vector3.Distance(wordObject.transform.position, targetPosition) < 0.1f)
             {
-                characterSpriteRenderer.sprite = hurtSprite;
-                toRemove.Add(wordObject);
+                Destroy(wordObject);
+                wordObjects.Remove(wordObject);
                 collisionCount++;
-                redColorTimer = redColorDuration;
+                characterSpriteRenderer.sprite = hurtSprite;
                 hurtTimer = hurtDuration;
             }
-        }
-
-        foreach (GameObject word in toRemove)
-        {
-            wordObjects.Remove(word);
-            Destroy(word);
         }
     }
 
@@ -135,7 +159,7 @@ public class WordManagerScript : MonoBehaviour
         if (closestWordObject != null)
         {
             TextMeshPro textMeshPro = closestWordObject.GetComponent<TextMeshPro>();
-            string plainText = Regex.Replace(textMeshPro.text, "<.*?>", string.Empty);
+            string plainText = Regex.Replace(textMeshPro.text, "<.*?>", string.Empty); // Eliminar formato
 
             if (plainText.StartsWith(currentTypedWord))
             {
@@ -143,23 +167,26 @@ public class WordManagerScript : MonoBehaviour
                 {
                     wordObjects.Remove(closestWordObject);
                     Destroy(closestWordObject);
+                    MakeWordVisible(currentTypedWord); // Cambiar la palabra a visible en verde
                     closestWordObject = null;
                     currentTypedWord = "";
                 }
                 else
                 {
-                    string updatedText = $"<color=#00FF00>{currentTypedWord}</color>" + plainText.Substring(currentTypedWord.Length);
-                    textMeshPro.text = updatedText;
+                    textMeshPro.text = "<color=#00FF00>" + currentTypedWord + "</color>" + plainText.Substring(currentTypedWord.Length);
                 }
             }
             else
             {
-                textMeshPro.text = $"<color=#FF0000>{plainText}</color>";
-                redColorTimer = redColorDuration;
+                textMeshPro.text = "<color=#FF0000>" + plainText + "</color>";
                 currentTypedWord = "";
             }
         }
     }
+
+
+
+
 
     void UpdateWordColors()
     {
@@ -178,9 +205,29 @@ public class WordManagerScript : MonoBehaviour
         if (closestWordObject != null)
         {
             TextMeshPro textMeshPro = closestWordObject.GetComponent<TextMeshPro>();
-            string plainText = Regex.Replace(textMeshPro.text, "<.*?>", string.Empty);
-            textMeshPro.text = plainText;
+            textMeshPro.text = Regex.Replace(textMeshPro.text, "<.*?>", string.Empty);
         }
+    }
+
+    void MakeWordVisible(string word)
+    {
+        if (words.Contains(word)) // Solo hace visible la palabra si está en la lista
+        {
+            string pattern = "<color=#00000000>" + Regex.Escape(word) + "</color>";
+            paragraphText.text = paragraphText.text.Replace(pattern, "<color=#00FF00>" + word + "</color>");
+        }
+    }
+
+
+
+    string ReplaceFirst(string text, string search, string replace)
+    {
+        int pos = text.IndexOf(search);
+        if (pos < 0)
+        {
+            return text;
+        }
+        return text.Substring(0, pos) + replace + text.Substring(pos + search.Length);
     }
 
     void UpdateClosestWord()
@@ -213,3 +260,4 @@ public class WordManagerScript : MonoBehaviour
         }
     }
 }
+
