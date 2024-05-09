@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using System.Text.RegularExpressions;
 
+
+
 public class WordManagerScript : MonoBehaviour
 {
     public List<string> words; // Lista de palabras a usar
@@ -11,6 +13,7 @@ public class WordManagerScript : MonoBehaviour
     public Transform spawnPoint; // Punto de aparición de las palabras
     public float speed = 5f; // Velocidad a la que se mueven las palabras
     private Vector3 targetPosition = new Vector3(2.95f, -4.12f, 0f); // Posición objetivo hacia la que se mueven las palabras
+    public TextMeshPro paragraphText;
 
     private List<GameObject> wordObjects = new List<GameObject>(); // Lista de objetos de palabras en la escena
     private GameObject closestWordObject; // Objeto de palabra más cercano
@@ -26,11 +29,22 @@ public class WordManagerScript : MonoBehaviour
     public Sprite normalSprite; // Sprite normal del personaje
     public Sprite hurtSprite; // Sprite del personaje herido
 
+    private string ReplaceFirst(string text, string search, string replace)
+    {
+        int pos = text.IndexOf(search);
+        if (pos < 0)
+        {
+            return text;
+        }
+        return text.Substring(0, pos) + replace + text.Substring(pos + search.Length);
+    }
+
     void Start()
     {
-        words = new List<string> { "espacio", "nave", "estrella", "galaxia", "planeta" };
+        words = new List<string> { "def", "suma", "return", "a", "b", "resultado", "function", "if", "else", "input", "int", "print", "for", "in", "range", "i", "len", "list", "total", "append" };
         ShuffleWords(); // Mezcla las palabras para variar el orden en cada juego
-        InvokeRepeating("SpawnWord", 0f, 2f); // Empieza a invocar la aparición de palabras
+        InvokeRepeating("SpawnWord", 0f, 1.5f); // Empieza a invocar la aparición de palabras
+        paragraphText.text = "<alpha=#00>" + string.Join(" ", words.ToArray()) + "</alpha>";
     }
 
     void ShuffleWords() // Función para mezclar las palabras
@@ -143,6 +157,7 @@ public class WordManagerScript : MonoBehaviour
                 {
                     wordObjects.Remove(closestWordObject);
                     Destroy(closestWordObject);
+                    MakeWordVisible(plainText); // Haz la palabra visible en el párrafo
                     closestWordObject = null;
                     currentTypedWord = "";
                 }
@@ -160,6 +175,7 @@ public class WordManagerScript : MonoBehaviour
             }
         }
     }
+
 
     void UpdateWordColors()
     {
@@ -182,6 +198,15 @@ public class WordManagerScript : MonoBehaviour
             textMeshPro.text = plainText;
         }
     }
+
+    void MakeWordVisible(string word)
+    {
+        // Reemplaza la primera ocurrencia de la palabra con una versión visible
+        string hiddenWord = "<alpha=#00>" + word + "</alpha>";
+        string visibleWord = "<alpha=#FF>" + word + "</alpha>";
+        paragraphText.text = ReplaceFirst(paragraphText.text, hiddenWord, visibleWord);
+    }
+
 
     void UpdateClosestWord()
     {
