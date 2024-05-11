@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/menuprincipal.unity
     guid: f54f8b74971044f0bb53f0930ba0b9e1
   - enabled: 1
-    path: Assets/Scenes/HabitacionAmy.unity
-    guid: 0f18c374db6a1fb4baf64f55270242e3
+    path: Assets/Scenes/pantalladecarga.unity
+    guid: 8490622bf4de64c399927d347b50197f
   - enabled: 1
     path: "Assets/Scenes/menuDise\xF1o.unity"
     guid: a298112ac4a66c14eaacb76160168330
@@ -72,6 +72,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MGame/Cubo.unity
     guid: aed505812ab37a64a8216da86f7fb762
   - enabled: 1
-    path: Assets/Scenes/pantalladecarga.unity
-    guid: 8490622bf4de64c399927d347b50197f
+    path: Assets/Scenes/HabitacionAmy.unity
+    guid: 0f18c374db6a1fb4baf64f55270242e3
   m_configObjects: {}
