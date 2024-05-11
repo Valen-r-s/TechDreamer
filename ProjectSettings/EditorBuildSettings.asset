@@ -71,4 +71,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MGame/Cubo.unity
     guid: aed505812ab37a64a8216da86f7fb762
+  - enabled: 1
+    path: Assets/Scenes/pantalladecarga.unity
+    guid: 8490622bf4de64c399927d347b50197f
   m_configObjects: {}

@@ -31,23 +31,29 @@ public class TransitionManager : MonoBehaviour
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneIndex);
         asyncLoad.allowSceneActivation = false;
 
-        while (asyncLoad.progress < 0.9f)
+        float progress = 0f;
+
+        while (!asyncLoad.isDone)
         {
-            float progress = Mathf.Clamp01(asyncLoad.progress / 0.9f);
-            progressSlider.value = progress;
-            textProgress.text = $"{progress * 100:00}%";
+            if (asyncLoad.progress < 0.9f)
+            {
+                progress = Mathf.Lerp(progress, asyncLoad.progress, Time.deltaTime * 0.5f);
+            }
+            else
+            {
+                progress = Mathf.Lerp(progress, 1f, Time.deltaTime * 0.5f);
+            }
+
+            progressSlider.value = progress / 0.9f; 
+            textProgress.text = $"{(progress / 0.9f) * 100:00}%";
+
+            if (Time.time - startTime > minimumLoadTime && asyncLoad.progress >= 0.9f)
+            {
+                asyncLoad.allowSceneActivation = true;
+            }
+
             yield return null;
         }
 
-        float loadTime = Time.time - startTime;
-        if (loadTime < minimumLoadTime)
-        {
-            yield return new WaitForSeconds(minimumLoadTime - loadTime);
-        }
-
-        progressSlider.value = 1f;
-        textProgress.text = "100%";
-
-        asyncLoad.allowSceneActivation = true;
     }
 }
