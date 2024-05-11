@@ -6,6 +6,7 @@ public class ActivadorNotas : MonoBehaviour
     public GameObject ObjetoVisual;
     public GameObject CamaraVisual;
     public GameObject ObjEnEscena;
+    public DialogoIntermedios dialogueManager;
 
     private bool activa;
 
@@ -15,10 +16,9 @@ public class ActivadorNotas : MonoBehaviour
         {
             ActivarNota();
         }
-        if (Input.GetKeyDown(KeyCode.Return) && activa)
+        if (Input.GetKeyDown(KeyCode.Q) && activa)
         {
             DesactivarNota();
-            // Llama al controlador para avanzar a la siguiente nota
             NoteManager.Instance.AvanzarNota();
         }
     }
@@ -29,6 +29,7 @@ public class ActivadorNotas : MonoBehaviour
         ObjetoVisual.SetActive(true);
         CamaraVisual.SetActive(true);
         ObjEnEscena.SetActive(false);
+        dialogueManager.ShowDialogueForDocument(gameObject);
     }
 
     public void DesactivarNota()
