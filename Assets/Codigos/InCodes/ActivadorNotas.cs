@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ActivadorNotas : MonoBehaviour
 {
@@ -7,6 +8,9 @@ public class ActivadorNotas : MonoBehaviour
     public GameObject CamaraVisual;
     public GameObject ObjEnEscena;
     public DialogoIntermedios dialogueManager;
+    public Button CloseButton;
+    public int dialogueIndex;
+
 
     private bool activa;
 
@@ -16,11 +20,19 @@ public class ActivadorNotas : MonoBehaviour
         {
             ActivarNota();
         }
-        if (Input.GetKeyDown(KeyCode.Q) && activa)
-        {
-            DesactivarNota();
-            NoteManager.Instance.AvanzarNota();
-        }
+        //if (Input.GetKeyDown(KeyCode.Q) && activa)
+        //{
+        //    DesactivarNota();
+        //    NoteManager.Instance.AvanzarNota();
+        //}
+    }
+
+
+    public void ClosePanelAndShowDialogue()
+    {
+        DesactivarNota();
+        NoteManager.Instance.AvanzarNota(); // Asegúrate de que este método hace lo que necesitas
+        dialogueManager.ShowDialogueByIndex(dialogueIndex); // Asume que quieres mostrar un diálogo específico después de cerrar
     }
 
     public void ActivarNota()

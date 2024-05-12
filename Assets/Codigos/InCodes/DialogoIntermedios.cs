@@ -32,6 +32,20 @@ public class DialogoIntermedios : MonoBehaviour
         }
     }
 
+
+    public void ShowDialogueByIndex(int index)
+    {
+        if (index >= 0 && index < dialogues.Length)
+        {
+            dialogueText.text = dialogues[index].text;
+            dialoguePanel.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning("Índice de diálogo fuera de rango: " + index);
+        }
+    }
+
     public void HideDialogue()
     {
         dialoguePanel.SetActive(false);
