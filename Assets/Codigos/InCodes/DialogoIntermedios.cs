@@ -6,6 +6,7 @@ public class Dialogue
 {
     public string text; // El texto del diálogo
     public GameObject relatedDocument; // El documento relacionado con este diálogo
+
 }
 
 public class DialogoIntermedios : MonoBehaviour
