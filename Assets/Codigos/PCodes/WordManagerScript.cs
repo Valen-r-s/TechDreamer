@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 
 public class WordManagerScript : MonoBehaviour
 {
+    public List<string> commonWords; // Nueva lista de palabras comunes
     public List<string> words; // Lista de palabras a usar
     public GameObject wordPrefab; // Prefab del objeto que representa la palabra
     public Transform spawnPoint; // Punto de aparición de las palabras
@@ -29,6 +30,7 @@ public class WordManagerScript : MonoBehaviour
 
     void Start()
     {
+
         words = new List<string> { "def", "suma", "return", "input", "int", "print", "for", "in", "range", "len", "list", "append", "if", "else" };
         string allText = @"def suma(a, b):
     return a + b
