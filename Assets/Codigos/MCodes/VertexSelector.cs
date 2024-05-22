@@ -190,7 +190,10 @@ public class VertexSelector : MonoBehaviour
     {
         mesh = GetComponent<MeshFilter>().mesh; // Asegúrate de que esta línea obtiene la malla actualizada
         vertices = mesh.vertices; // Actualiza la lista de vértices con las nuevas posiciones
+                                  // Actualizar el mesh collider
+        UpdateMeshCollider();
     }
 
-    
+
+
 }

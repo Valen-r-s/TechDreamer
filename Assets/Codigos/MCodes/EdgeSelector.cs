@@ -178,16 +178,17 @@ public class EdgeSelector : MonoBehaviour
         currentEdgeMarker.transform.localScale = new Vector3(currentEdgeMarker.transform.localScale.x, length / 2, currentEdgeMarker.transform.localScale.z);
         currentEdgeMarker.GetComponent<Renderer>().material.color = color;
     }
-
-
     public void ReloadMeshData()
     {
         mesh = GetComponent<MeshFilter>().mesh;
         vertices = mesh.vertices;
         triangles = mesh.triangles;
-        // Asimismo, recalcular las aristas únicas para reflejar la malla actualizada
+        // Actualizar las aristas únicas para reflejar la malla actualizada
         CalculateUniqueEdges();
+        // Actualizar el mesh collider
+        UpdateMeshCollider();
     }
+
 
 
 }
