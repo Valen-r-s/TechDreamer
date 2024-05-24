@@ -5,21 +5,19 @@ using UnityEngine.UI;
 
 public class TimerINVESt : MonoBehaviour
 {
+
     public Text timerText;
-    private float timeRemaining;
+    private float timeRemaining = 180; // 3 minutos en segundos
     private bool timerIsRunning = false;
-    private bool isPaused = false;
 
     void Start()
     {
-        // Inicia el temporizador con un tiempo específico
-        timeRemaining = 60; // Por ejemplo, 60 segundos
-        timerText.text = timeRemaining.ToString();
+        UpdateTimerUI();
     }
 
     void Update()
     {
-        if (timerIsRunning && !isPaused)
+        if (timerIsRunning)
         {
             if (timeRemaining > 0)
             {
@@ -42,16 +40,28 @@ public class TimerINVESt : MonoBehaviour
 
     public void PauseTimer()
     {
-        isPaused = true;
+        timerIsRunning = false;
     }
 
     public void ResumeTimer()
     {
-        isPaused = false;
+        timerIsRunning = true;
     }
 
-    void UpdateTimerUI()
+    public void StopTimer()
     {
-        timerText.text = Mathf.Round(timeRemaining).ToString();
+        timerIsRunning = false;
+    }
+
+    public float GetTimeRemaining()
+    {
+        return timeRemaining;
+    }
+
+    private void UpdateTimerUI()
+    {
+        int minutes = Mathf.FloorToInt(timeRemaining / 60);
+        int seconds = Mathf.FloorToInt(timeRemaining % 60);
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }

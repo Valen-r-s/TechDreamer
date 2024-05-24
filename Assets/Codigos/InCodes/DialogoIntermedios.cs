@@ -1,12 +1,13 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 [System.Serializable]
 public class Dialogue
 {
     public string text; // El texto del diálogo
     public GameObject relatedDocument; // El documento relacionado con este diálogo
-
 }
 
 public class DialogoIntermedios : MonoBehaviour
@@ -14,6 +15,7 @@ public class DialogoIntermedios : MonoBehaviour
     public Dialogue[] dialogues;
     public GameObject dialoguePanel;
     public TextMeshProUGUI dialogueText;
+    public string puntajeSceneName; // Nombre de la escena del puntaje
 
     void Start()
     {
@@ -33,13 +35,18 @@ public class DialogoIntermedios : MonoBehaviour
         }
     }
 
-
     public void ShowDialogueByIndex(int index)
     {
         if (index >= 0 && index < dialogues.Length)
         {
             dialogueText.text = dialogues[index].text;
             dialoguePanel.SetActive(true);
+            // Verificar si es el último diálogo
+            if (index == dialogues.Length - 1)
+            {
+                // Esperar unos segundos antes de cambiar de escena para permitir que el diálogo se lea
+                StartCoroutine(WaitAndLoadScene(5)); // Espera 5 segundos, puedes ajustar esto
+            }
         }
         else
         {
@@ -58,5 +65,11 @@ public class DialogoIntermedios : MonoBehaviour
         {
             HideDialogue();
         }
+    }
+
+    private IEnumerator WaitAndLoadScene(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        SceneManager.LoadScene(puntajeSceneName);
     }
 }
