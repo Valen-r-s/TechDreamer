@@ -8,6 +8,7 @@ public class ScoreDisplay : MonoBehaviour
     void Start()
     {
         // Mostrar la puntuación final
-        scoreText.text = "Puntaje: " + ScoreManager.finalScore.ToString("F2");
+        scoreText.text = "Puntaje: " + Mathf.RoundToInt(ScoreManager.finalScore).ToString();
+
     }
 }

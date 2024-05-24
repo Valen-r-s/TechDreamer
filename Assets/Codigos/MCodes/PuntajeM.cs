@@ -16,18 +16,18 @@ public class PuntajeM : MonoBehaviour
         float finalScore = ScoreManager.finalScore;
 
         // Mostrar medallas en función del puntaje final
-        if (finalScore >= 90)
+        if (finalScore >= 50)
         {
             imagen3.sprite = oro;
             imagen2.sprite = plata;
             imagen1.sprite = bronce;
         }
-        else if (finalScore >= 75)
+        else if (finalScore >= 35)
         {
             imagen2.sprite = plata;
             imagen1.sprite = bronce;
         }
-        else if (finalScore >= 50)
+        else if (finalScore >= 15)
         {
             imagen1.sprite = bronce;
         }

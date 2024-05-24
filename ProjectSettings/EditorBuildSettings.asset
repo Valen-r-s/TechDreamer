@@ -78,9 +78,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MGame/IntroM.unity
     guid: ec51b9eb06baf7643afecd2089b59448
   - enabled: 1
-    path: Assets/Scenes/MGame/TutorialJuegoM.unity
-    guid: 32623242931a929478eff63360ff76b1
-  - enabled: 1
     path: Assets/Scenes/MGame/FinalM.unity
     guid: d1d411a8573a9c24f8e695ad35836754
+  - enabled: 1
+    path: Assets/Scenes/MGame/TutorialM.unity
+    guid: 1774f28127cf4c943b075f52bf033da2
+  - enabled: 1
+    path: Assets/Scenes/MGame/ResultadosT.unity
+    guid: bb10fb2daac56e44fa4f6bdae0fc74ff
   m_configObjects: {}
