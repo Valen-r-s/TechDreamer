@@ -10,7 +10,8 @@ public class ActivadorNotas : MonoBehaviour
     public DialogoIntermedios dialogueManager;
     public Button CloseButton;
     public int dialogueIndex;
-
+    public TimerINVESt timer; // Añade esta línea
+    public NoteCounter noteCounter;  // Añade una referencia al NoteCounter
 
     private bool activa;
 
@@ -27,7 +28,6 @@ public class ActivadorNotas : MonoBehaviour
         //}
     }
 
-
     public void ClosePanelAndShowDialogue()
     {
         DesactivarNota();
@@ -42,6 +42,10 @@ public class ActivadorNotas : MonoBehaviour
         CamaraVisual.SetActive(true);
         ObjEnEscena.SetActive(false);
         dialogueManager.ShowDialogueForDocument(gameObject);
+
+        // Pausar el temporizador
+        timer.PauseTimer();
+        
     }
 
     public void DesactivarNota()
@@ -50,6 +54,11 @@ public class ActivadorNotas : MonoBehaviour
         ObjetoVisual.SetActive(false);
         CamaraVisual.SetActive(false);
         ObjEnEscena.SetActive(true);
+
+        // Reanudar el temporizador
+        timer.ResumeTimer();
+        // Incrementar el contador de notas
+        noteCounter.IncrementCounter();
     }
 
     private void OnTriggerEnter(Collider other)

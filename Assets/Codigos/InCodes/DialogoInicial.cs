@@ -4,12 +4,14 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 public class DialogIInicial : MonoBehaviour
 {
     public TextMeshProUGUI Dialogue;
     public TextMeshProUGUI continuarButton;
     public string[] lines;
     public float textSpeed;
+    public TimerINVESt timer;
 
     private int index;
 
@@ -72,6 +74,7 @@ public class DialogIInicial : MonoBehaviour
     void EndDialog()
     {
         gameObject.SetActive(false);
+        timer.StartTimer();
     }
 
     void mostrarContinuar(bool mostrar)

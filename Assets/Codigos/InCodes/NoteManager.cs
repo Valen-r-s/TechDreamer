@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class NoteManager : MonoBehaviour
 {
-  
+
     public static NoteManager Instance { get; private set; }  // Singleton instance
 
     public GameObject[] notas;
