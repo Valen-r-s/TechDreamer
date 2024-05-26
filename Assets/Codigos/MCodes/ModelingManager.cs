@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class ModelingManager : MonoBehaviour
 {
     public Button finishButton;
-    public VertexScoreCalculator vertexScoreCalculator;
+    public VertexComparisonScoreCalculatorM scoreCalculator;
 
     void Start()
     {
@@ -15,7 +15,7 @@ public class ModelingManager : MonoBehaviour
     void OnFinishButtonClicked()
     {
         // Calcular la puntuación final
-        float finalScore = vertexScoreCalculator.CalculateFinalScore();
+        float finalScore = scoreCalculator.CalculateScore();
 
         // Guardar la puntuación en una clase estática
         ScoreManager.finalScore = finalScore;

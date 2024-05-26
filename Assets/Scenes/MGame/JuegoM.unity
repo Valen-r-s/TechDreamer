@@ -2661,14 +2661,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1138556744}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b6ca831d6a1171449f242ffe77138b2, type: 3}
+  m_Script: {fileID: 11500000, guid: c6e428663634af541a2602e8893ceb9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frontReferenceImage: {fileID: 2800000, guid: 5c4ce163f7e93f4439dd2e07f6f80b11, type: 3}
-  sideReferenceImage: {fileID: 2800000, guid: 3ae61fd2cedb84b45a459b9a0446c5ad, type: 3}
-  vertexProjector: {fileID: 1271970750}
-  closeThreshold: 0.01
-  mediumThreshold: 0.05
+  targetObject: {fileID: 1271970739}
+  tolerance: 0.04
+  pointsPerVertex: 25
 --- !u!1 &1271970739
 GameObject:
   m_ObjectHideFlags: 0
@@ -3393,7 +3391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finishButton: {fileID: 2117789426}
-  vertexScoreCalculator: {fileID: 1138556746}
+  scoreCalculator: {fileID: 1138556746}
 --- !u!4 &1902511221
 Transform:
   m_ObjectHideFlags: 0
