@@ -33,7 +33,7 @@ public class MostrarPuntajeNat : MonoBehaviour
             {
                 timeRemaining = 0;
                 timerIsRunning = false;
-                // Llamar la función que calcula y muestra el puntaje
+                // Llamar la funci?n que calcula y muestra el puntaje
                 CalculateAndShowScore();
             }
         }
@@ -86,9 +86,9 @@ public class MostrarPuntajeNat : MonoBehaviour
         {
             return 100; // Bronce
         }
-        else // Más de 3 minutos
+        else // M?s de 3 minutos
         {
-            return 50; // Puntuación mínima por completar la misión
+            return 50; // Puntuaci?n m?nima por completar la misi?n
         }
     }
 }
