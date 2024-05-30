@@ -2,9 +2,7 @@ using UnityEngine;
 
 public class NoteManager : MonoBehaviour
 {
-
-    public static NoteManager Instance { get; private set; }  // Singleton instance
-
+    public static NoteManager Instance { get; private set; }
     public GameObject[] notas;
     private int indiceNotaActual = 0;
 
@@ -13,32 +11,43 @@ public class NoteManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);  // Opcional, solo si necesitas que persista entre escenas
+            DontDestroyOnLoad(gameObject);
         }
-        else
+        else if (Instance != this)
         {
-            Destroy(gameObject);  // Asegura que solo exista una instancia
+            Destroy(gameObject);
         }
-    }
-    void Start()
-    {
-        // Inicializar todas las notas como inactivas excepto la primera
-        for (int i = 1; i < notas.Length; i++)
-        {
-            notas[i].SetActive(false);
-        }
-        notas[0].SetActive(true);
     }
 
-    // Llamar este método desde ActivadorNotas cuando el usuario cierre la nota con Escape
+    void OnEnable()
+    {
+        // Reasignar las referencias de los documentos
+        notas = GameObject.FindGameObjectsWithTag("Documento");
+        System.Array.Sort(notas, (x, y) => string.Compare(x.name, y.name));  // Ordena por nombre
+
+        // Reactiva el documento inicial y desactiva los demás
+        if (notas.Length > 0)
+        {
+            foreach (GameObject nota in notas)
+            {
+                nota.SetActive(false);
+            }
+            notas[0].SetActive(true);
+            indiceNotaActual = 0; // Restablece el índice al principio para cada nuevo juego
+        }
+    }
+
     public void AvanzarNota()
     {
-        notas[indiceNotaActual].SetActive(false);
-        indiceNotaActual++;
-        if (indiceNotaActual >= notas.Length)
+        if (notas != null && indiceNotaActual < notas.Length)
         {
-            indiceNotaActual = 0; // Opcional: Reiniciar el ciclo o detener la interacción
+            notas[indiceNotaActual].SetActive(false);
+            indiceNotaActual++;
+            if (indiceNotaActual >= notas.Length)
+            {
+                indiceNotaActual = 0; // O reiniciar el ciclo o finalizar
+            }
+            notas[indiceNotaActual].SetActive(true);
         }
-        notas[indiceNotaActual].SetActive(true);
     }
 }
