@@ -30,8 +30,9 @@ public class WordManagerScript : MonoBehaviour
 
     void Start()
     {
-
+        commonWords = new List<string> { "def", "suma", "return", "input", "int", "print", "for", "in", "range", "len", "list", "append", "if", "else" };
         words = new List<string> { "def", "suma", "return", "input", "int", "print", "for", "in", "range", "len", "list", "append", "if", "else" };
+
         string allText = @"def suma(a, b):
     return a + b
 
@@ -58,18 +59,24 @@ else:
     print(""El total es menor o igual a 100"")";
 
         // Ocultar las palabras clave inicialmente
-        foreach (string word in words)
+        foreach (string word in commonWords)
         {
             allText = Regex.Replace(allText, @"\b" + Regex.Escape(word) + @"\b", "<color=#00000000>" + word + "</color>");
+        }
+
+        // Mostrar las palabras que no están en commonWords
+        foreach (string word in words)
+        {
+            if (!commonWords.Contains(word))
+            {
+                allText = Regex.Replace(allText, @"\b" + Regex.Escape(word) + @"\b", "<color=#FF0000>" + word + "</color>");
+            }
         }
 
         paragraphText.text = allText;
         ShuffleWords();
         InvokeRepeating("SpawnWord", 0f, 1.5f);
     }
-
-
-
 
     void ShuffleWords()
     {
@@ -186,10 +193,6 @@ else:
         }
     }
 
-
-
-
-
     void UpdateWordColors()
     {
         if (redColorTimer > 0)
@@ -213,14 +216,12 @@ else:
 
     void MakeWordVisible(string word)
     {
-        if (words.Contains(word)) // Solo hace visible la palabra si está en la lista
+        if (commonWords.Contains(word)) // Solo hace visible la palabra si está en la lista de palabras comunes
         {
             string pattern = "<color=#00000000>" + Regex.Escape(word) + "</color>";
             paragraphText.text = paragraphText.text.Replace(pattern, "<color=#00FF00>" + word + "</color>");
         }
     }
-
-
 
     string ReplaceFirst(string text, string search, string replace)
     {
@@ -262,4 +263,3 @@ else:
         }
     }
 }
-
