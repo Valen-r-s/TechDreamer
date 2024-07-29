@@ -12,6 +12,7 @@ public class ActivadorNotas : MonoBehaviour
     public int dialogueIndex;
     public TimerINVESt timer; // Añade esta línea
     public NoteCounter noteCounter;  // Añade una referencia al NoteCounter
+    public GameObject texto;
 
     private bool activa;
 
@@ -37,6 +38,7 @@ public class ActivadorNotas : MonoBehaviour
 
     public void ActivarNota()
     {
+        texto.SetActive(false);
         notaVisual.SetActive(true);
         ObjetoVisual.SetActive(true);
         CamaraVisual.SetActive(true);
@@ -65,6 +67,7 @@ public class ActivadorNotas : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            texto.SetActive(true);
             activa = true;
         }
     }
@@ -73,6 +76,7 @@ public class ActivadorNotas : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            texto.SetActive(false);
             activa = false;
             DesactivarNota();
         }
