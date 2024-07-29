@@ -2295,6 +2295,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2376,6 +2377,102 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &963194229
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: bd7ec729ed136473d8d498bdf0c01a10, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.35
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1145025550
 GameObject:
   m_ObjectHideFlags: 0
@@ -3025,18 +3122,18 @@ MonoBehaviour:
   textComponent: {fileID: 770764915}
   continuar: {fileID: 2099786098}
   lines:
-  - Hola soy Retta Scott, fui animadora de Walt Disney Studios. Trabaje en la pelicula
-    de Bambi, Dumbo y Fantasia.
+  - "Hola soy Retta Scott, fui animadora de Walt Disney Studios. Trabaje en la pel\xEDcula
+    de Bambi, Dumbo y Fantas\xEDa."
   - "Te voy acompa\xF1ar en este viaje de aprendizaje sobre animaci\xF3n. Para ello
     realizaremos este tutorial."
-  - Para animar necesitamos una secuencia de imagenes, tendras que organizarla. Dale
-    click a la imagen y arrastrala a los cuadros morados de abajo
+  - "Para animar necesitamos una secuencia de im\xE1genes, tendr\xE1s que organizarla.
+    Dale click a la im\xE1gen y arrastrala a los cuadros morados de abajo."
   - "En este caso tenemos una pelota rebotando donde la pelota se encuentra arriba.
-    Esta animacion que vas a realizar cumple algunos principios de animaci\xF3n como
-    lo son squasch (encojimiento) y stretch (alargamiento)."
-  - "Para ver si tu secuencia quedo bien o va bien dale al boton verificar y te dire
-    cuantos errores tienes o si ya completaste la secuencia. Si necesitas ayuda,
-    dale al bot\xF3n de pistas."
+    Esta animaci\xF3n que vas a realizar cumple algunos principios de animaci\xF3n
+    como lo son squasch (encojimiento) y stretch (alargamiento)."
+  - "Para ver si tu secuencia quedo bien o va bien dale al bot\xF3n verificar y te
+    dir\xE9 cuantos errores tienes o si ya completaste la secuencia. Si necesitas
+    ayuda, dale al bot\xF3n de pistas."
   - Trata de completarla antes de se acabe el tiempo, como este es un tutorial, para
     esta secuencia tienes el tiempo ilimitado.
   textSpeed: 0
