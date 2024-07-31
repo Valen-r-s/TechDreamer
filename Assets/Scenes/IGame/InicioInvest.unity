@@ -25099,7 +25099,7 @@ MonoBehaviour:
   dialogueIndex: 7
   timer: {fileID: 180169231}
   noteCounter: {fileID: 1322391485}
-  texto: {fileID: 0}
+  texto: {fileID: 2056688894}
 --- !u!65 &1137852490
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48035,7 +48035,7 @@ MonoBehaviour:
   dialogueIndex: 6
   timer: {fileID: 180169231}
   noteCounter: {fileID: 1322391485}
-  texto: {fileID: 1137852487}
+  texto: {fileID: 2056688894}
 --- !u!65 &1978757078
 BoxCollider:
   m_ObjectHideFlags: 0
