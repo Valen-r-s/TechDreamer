@@ -784,7 +784,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.17119144, g: 0.076317206, b: 0.3301887, a: 1}
-  m_Intensity: 16
+  m_Intensity: 25
   m_Range: 0.8
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1006,6 +1006,7 @@ GameObject:
   - component: {fileID: 663986497}
   - component: {fileID: 663986499}
   - component: {fileID: 663986498}
+  - component: {fileID: 663986500}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1029,8 +1030,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -41.6, y: 40.4}
-  m_SizeDelta: {x: 205.8, y: 555.3}
+  m_AnchoredPosition: {x: 0, y: 210.2}
+  m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &663986498
 MonoBehaviour:
@@ -1052,7 +1053,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Presiona la tecla e
+  m_text: Presiona e para interactuar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -1079,15 +1080,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48.06
-  m_fontSizeBase: 48.06
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: -6.2
   m_wordSpacing: 0
@@ -1129,6 +1130,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 663986496}
   m_CullTransparentMesh: 1
+--- !u!114 &663986500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663986496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -3355,7 +3371,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.24262762, g: 0.15592737, b: 0.4528302, a: 1}
-  m_Intensity: 22.94
+  m_Intensity: 25
   m_Range: 0.8
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -3463,7 +3479,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.1273585, g: 0.29602033, b: 1, a: 1}
-  m_Intensity: 24.75
+  m_Intensity: 25
   m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -3920,7 +3936,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.6132076, g: 0.25676376, b: 0.24586153, a: 1}
-  m_Intensity: 16
+  m_Intensity: 25
   m_Range: 0.8
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -4871,8 +4887,8 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.19118984, g: 0.4509804, b: 0.15686277, a: 1}
-  m_Intensity: 22.94
+  m_Color: {r: 1, g: 0.5287791, b: 0.15686274, a: 1}
+  m_Intensity: 25
   m_Range: 0.8
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
