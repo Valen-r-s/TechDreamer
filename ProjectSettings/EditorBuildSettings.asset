@@ -90,9 +90,6 @@ EditorBuildSettings:
     path: Assets/Scenes/IGame/PuntajeNat.unity
     guid: 66e7ff4ae073d4148bc4fce45f44df8d
   - enabled: 1
-    path: Assets/Scenes/VideoIntro.unity
-    guid: e997b14c7f0605f4d9a63b257e64f5f2
-  - enabled: 1
     path: Assets/Scenes/PantallaCargaIntro.unity
     guid: 5108d74e8d219474a9621393a741b111
   m_configObjects: {}
